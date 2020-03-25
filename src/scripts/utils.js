@@ -26,13 +26,6 @@ function generateRandomColor(userConfig = {}) {
     b = generateRandomNumber(minB, maxB);
     a = generateRandomNumber(minA, maxA) / 1000;
 
-    console.log("config");
-    console.log({
-        string: `rgba(${r}, ${g}, ${b}, ${a})`,
-        color: {
-            r, g, b, a
-        }
-    });
     return {
         string: `rgba(${r}, ${g}, ${b}, ${a})`,
         color: {
@@ -96,18 +89,25 @@ function copyToClipboard(text) {
     document.execCommand('copy');
     document.body.removeChild(textArea);
 }
-function rgbToHex(r, g, b) {
-    return '#' + [r, g, b].map(x => {
-        const hex = x.toString(16)
-        return hex.length === 1 ? '0' + hex : hex
-    }).join('')
-}
-
+function rgbToHex(rgb) {
+    let hex = Number(rgb).toString(16);
+    if (hex.length < 2) {
+        hex = "0" + hex;
+    }
+    return hex;
+};
+function fullColorHex(r, g, b) {
+    let red = rgbToHex(r);
+    let green = rgbToHex(g);
+    let blue = rgbToHex(b);
+    return red + green + blue;
+};
 export {
     generateRandomNumber,
     generateRandomColor,
     generateRandomColorPalette,
     firstLetterUppercase,
     copyToClipboard,
-    rgbToHex
+    rgbToHex,
+    fullColorHex
 }

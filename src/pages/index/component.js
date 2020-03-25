@@ -27,7 +27,7 @@ const index = function () {
             this.paletteContainerNode = this.paletteContainer.stringToHTML();
 
             this.paletteArray.forEach(palette => {
-                const paletteCardWrapper = PaletteCardWrapper(palette);
+                const paletteCardWrapper = PaletteCardWrapper(palette.hex);
                 this.paletteContainerNode.appendChild(paletteCardWrapper);
             });
 
