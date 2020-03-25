@@ -26,6 +26,13 @@ function generateRandomColor(userConfig = {}) {
     b = generateRandomNumber(minB, maxB);
     a = generateRandomNumber(minA, maxA) / 1000;
 
+    console.log("config");
+    console.log({
+        string: `rgba(${r}, ${g}, ${b}, ${a})`,
+        color: {
+            r, g, b, a
+        }
+    });
     return {
         string: `rgba(${r}, ${g}, ${b}, ${a})`,
         color: {
