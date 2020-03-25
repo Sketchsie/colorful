@@ -15,10 +15,15 @@ const IndexPage = {
         this.init();
     },
     init: function () {
-        this.renderPalette();
-        setTimeout(() => {
-            this.init();
-        }, 2000);
+        for (let index = 0; index < 30; index++) {
+            this.renderPalette();
+        }
+        window.onscroll = function (e) {
+            console.log("scrollY")
+            console.log(window.scrollY);
+            console.log("offset")
+            console.log(window.pageYOffset);
+        }
     },
     renderPalette: function () {
         const base = generateRandomColor();
