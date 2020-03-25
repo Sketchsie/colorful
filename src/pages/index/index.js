@@ -15,15 +15,20 @@ const IndexPage = {
         this.init();
     },
     init: function () {
-        for (let index = 0; index < 30; index++) {
-            this.renderPalette();
+        function loadMore() {
+            for (let index = 0; index < 30; index++) {
+                this.renderPalette();
+            }
         }
-        window.onscroll = function (e) {
-            console.log("scrollY")
-            console.log(window.scrollY);
-            console.log("offset")
-            console.log(window.pageYOffset);
-        }
+        loadMore.call(this);
+
+        const doc = document.documentElement;
+
+        window.onscroll = function () {
+            const value = parseInt(100 * doc.scrollTop / (doc.scrollHeight - doc.clientHeight))
+            if (value >= 50)
+                loadMore.call(this);
+        }.bind(this)
     },
     renderPalette: function () {
         const base = generateRandomColor();

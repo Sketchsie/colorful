@@ -6,7 +6,7 @@ const index = function () {
 
     root.innerHTML = "";
 
-    return {
+    const instance = {
         paletteArray: [],
         paletteWrapper: `
             <div id="palette-wrapper">
@@ -18,24 +18,29 @@ const index = function () {
         `,
         paletteWrapperNode: null,
         paletteContainerNode: null,
-        addPalette: function (colorsArray) {
+
+        init: function () {
             root.innerHTML = "";
-
-            this.paletteArray.push(colorsArray);
-
             this.paletteWrapperNode = this.paletteWrapper.stringToHTML();
             this.paletteContainerNode = this.paletteContainer.stringToHTML();
 
-            this.paletteArray.forEach(palette => {
-                const paletteCardWrapper = PaletteCardWrapper(palette.hex);
-                this.paletteContainerNode.appendChild(paletteCardWrapper);
-            });
-
             this.paletteWrapperNode.appendChild(this.paletteContainerNode);
+
             root.appendChild(NavBar());
             root.appendChild(this.paletteWrapperNode);
+        },
+        addPalette: function (colorsArray) {
+
+            this.paletteArray.push(colorsArray);
+
+            const palette = colorsArray.hex;
+            const paletteCardWrapper = PaletteCardWrapper(palette);
+            this.paletteContainerNode.appendChild(paletteCardWrapper);
         }
     };
+    instance.init.call(instance);
+
+    return instance;
 }
 
 export default index;
