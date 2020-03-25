@@ -1,7 +1,8 @@
+<a href="https://github.com/LaksCastro/colorful/edit/master/README-ptbr.md">Leia esta página em português</a>
 <p align="center">
   <img src="./src/assets/images/logo.png" width="150">
   <h1 align="center">Colorful</h1>
-  <p align="center">One Paragraph of project description goes here</p>
+  <p align="center">Infinite color palettes, save it or copy any of its colors, enjoy</p>
 </p>
 
 ## Getting Started
