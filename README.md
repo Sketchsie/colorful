@@ -1,10 +1,8 @@
 <h1 align="center">
   <img src="./src/assets/images/logo.png" width="150">
 </h1>
-
-# Project Title
-
-One Paragraph of project description goes here
+<h1 align="center">Colorful</h1>
+<p align="center">One Paragraph of project description goes here</p>
 
 ## Getting Started
 
