@@ -21,10 +21,10 @@ function generateRandomColor(userConfig = {}) {
     maxA *= 1000;
     minA *= 1000;
 
-    r = randomIntFromInterval(minR, maxR);
-    g = randomIntFromInterval(minG, maxG);
-    b = randomIntFromInterval(minB, maxB);
-    a = randomIntFromInterval(minA, maxA) / 1000;
+    r = generateRandomNumber(minR, maxR);
+    g = generateRandomNumber(minG, maxG);
+    b = generateRandomNumber(minB, maxB);
+    a = generateRandomNumber(minA, maxA) / 1000;
 
     return {
         string: `rgba(${r}, ${g}, ${b}, ${a})`,
@@ -55,7 +55,7 @@ function generateRandomColorPalette(userColor = {}, userVariant = {}) {
         const defaultConfig = {
             min: 0,
             max: 255,
-            num: randomIntFromInterval(0, 255),
+            num: generateRandomNumber(0, 255),
             variant: 15
         }
         const config = Object.assign({}, defaultConfig, userConfig);
