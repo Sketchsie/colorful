@@ -5,16 +5,20 @@ import "../../assets/images/logo.svg"
 import "./styles.scss";
 
 const IndexPage = {
-    render: async () => {
-        const page = index();
 
-        const response = await fetch("https://palett.es/API/v1/palette");
+    render: async () => {
+        const indexPage = index();
+
+        const response = await fetch("http://www.colr.org/json/schemes/random/7");
 
         console.log(response);
 
-        page.addPalette(data);
-
-        setTimeout(this.render.bind(this), 2000);
+        const data = await response.json();
+        data.schemes.forEach(palette => {
+            const { colors } = palette;
+            const hex = colors.map(item => `#${item}`);
+            indexPage.addPalette(hex);
+        })
     }
 }
 
