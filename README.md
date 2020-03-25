@@ -1,8 +1,8 @@
-<h1 align="center">
+<p align="center">
   <img src="./src/assets/images/logo.png" width="150">
-</h1>
-<h1 align="center">Colorful</h1>
-<p align="center">One Paragraph of project description goes here</p>
+  <h1 align="center">Colorful</h1>
+  <p align="center">One Paragraph of project description goes here</p>
+</p>
 
 ## Getting Started
 
