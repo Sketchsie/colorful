@@ -2,8 +2,6 @@
   <img src="./src/assets/images/logo.png" width="150">
 </h1>
 
----
-
 # Project Title
 
 One Paragraph of project description goes here
