@@ -44,4 +44,80 @@
     color: rgba(0,0,0,.65);
 }
 
-/
+// ================== PALETTE CARD WRAPPER
+
+#palette-wrapper{
+    display: flex;
+    justify-content: center;
+}
+#palette-container{
+    display: flex;
+    justify-content: center;
+    max-width: 960px;
+    padding: 2rem 0.6rem;
+    flex: 1;
+}
+.p-item-container{
+    box-shadow: 1px 2px 12px 3px #f1f1f1;
+    border-radius: 6px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    min-height: 50px;
+    
+    width: 100%;
+    width: 100%;
+}
+.p-item{
+    display: flex;
+    align-items: flex-end;
+    
+    padding: 12px;
+    padding-top: 4rem;
+    
+
+
+    cursor: pointer;
+
+    p{
+        will-change: opacity, visibility;
+        opacity: 0;
+        visibility: hidden;
+
+        transition: all .3s ease-in-out;
+
+        padding: 4px 6px;
+        background: rgba(0,0,0,.5);
+        color: #f1f1f1;
+        border-radius: 3px;
+
+        width: 100%;
+        max-width: 100px;
+        text-align: center;
+    }
+    &:hover{
+        p{
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+#c1{
+    background: #6d5c55;
+}
+
+#c2{
+    background: #a1d0a2;
+}
+
+#c3{
+    background: #dfeecc;
+}
+
+#c4{
+    background: #fdfaf7;
+}
+
+#c5{
+    background: #f2e7de;
+}
