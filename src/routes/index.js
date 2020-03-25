@@ -1,7 +1,3 @@
-String.prototype.divide = function (stringToDivide) {
-    return this.split(stringToDivide).filter(item => item !== "");
-}
-
 const Router = function () {
 
     function match() {

@@ -7,6 +7,7 @@ import Router from "./routes"
 import Index from "./pages/index"
 import Color from "./pages/color"
 
+import "./scripts/customPrototypes"
 
 document.addEventListener('DOMContentLoaded', () => {
     const routes = Router();

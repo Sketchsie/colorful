@@ -79,9 +79,20 @@ function firstLetterUppercase(string) {
     return string.replace(/^./, string[0].toUpperCase())
 }
 
+function copyToClipboard(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed'; //avoid scrolling to bottom
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+}
 export {
     generateRandomNumber,
     generateRandomColor,
     generateRandomColorPalette,
-    firstLetterUppercase
+    firstLetterUppercase,
+    copyToClipboard
 }
