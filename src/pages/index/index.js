@@ -28,6 +28,7 @@ const IndexPage = {
             const value = parseInt(100 * doc.scrollTop / (doc.scrollHeight - doc.clientHeight))
             if (value >= 50)
                 loadMore.call(this);
+
         }.bind(this)
     },
     renderPalette: function () {
