@@ -43,6 +43,10 @@
         max-width: 850px;
         color: #fff;
         font-size: 2em;
+
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
 }
 #interface-preview-span-container{
@@ -59,8 +63,11 @@
 }
 .interface-preview-tab-item{
     padding: 1rem 2rem;
-    color: var(--background);
+    color: inherit;
     border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
     &:first-child{
         border-color: #001970;
     }
