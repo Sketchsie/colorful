@@ -5,6 +5,8 @@ const Router = function () {
 
         pathname: null,
 
+        page404: null,
+
         match: function () {
             const { pathname } = this;
 
@@ -18,6 +20,8 @@ const Router = function () {
                 params: null,
             }
             let useReq = false;
+
+            let is404 = 0;
 
             this.routes.filter(route => route.pathname !== "/").forEach(route => {
                 const routeParams = route.pathname.divide("/");
@@ -38,8 +42,11 @@ const Router = function () {
                     }
                     if (paramName !== params[i]) isTheRoute = false;
                 });
+                if (isTheRoute) is404++;
+
                 return isTheRoute && route.callback(useReq ? req : undefined);
             });
+            if (is404 === 0) this.page404.callback();
         },
         get: function (pathname, callback) {
             if (!pathname || !callback) {
@@ -50,6 +57,14 @@ const Router = function () {
             }
             if (this.routes.some(route => route.pathname === pathname)) {
                 throw new Error("Already have a route with this path :(");
+            }
+
+            if (pathname === "*") {
+                this.page404 = {
+                    pathname,
+                    callback
+                }
+                return;
             }
 
             this.routes.push({
