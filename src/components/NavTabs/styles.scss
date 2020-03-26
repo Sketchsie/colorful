@@ -13,7 +13,7 @@
 }
 .nav-tab-item-container{
     cursor: pointer;
-    
+
     display: flex;
     padding: 12px;
 
@@ -36,7 +36,7 @@
         background: var(--content-lightness);
     }
     p{
-        padding-top: 3.5rem;
+        padding-top: 1.5rem;
         color: var(--color);
     }
 }
@@ -44,8 +44,6 @@
     width: 25px;
     height: 35px;
 
-    background: red;
-    
     display: flex;
     flex-direction: column;
 
