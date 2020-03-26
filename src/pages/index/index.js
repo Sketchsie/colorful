@@ -15,21 +15,21 @@ const IndexPage = {
         this.init();
     },
     init: function () {
-        function loadMore() {
-            for (let index = 0; index < 30; index++) {
-                this.renderPalette();
-            }
+        this.loadMore(this);
+        this.infiniteScroll();
+    },
+    loadMore: function () {
+        for (let index = 0; index < 30; index++) {
+            this.renderPalette();
         }
-        loadMore.call(this);
-
+    },
+    infiniteScroll: function () {
         const doc = document.documentElement;
-
-        window.onscroll = function () {
+        window.addEventListener("scroll", function () {
             const value = parseInt(100 * doc.scrollTop / (doc.scrollHeight - doc.clientHeight))
             if (value >= 50)
-                loadMore.call(this);
-
-        }.bind(this)
+                this.loadMore();
+        }.bind(this));
     },
     renderPalette: function () {
         const base = generateRandomColor();
@@ -39,19 +39,19 @@ const IndexPage = {
             b: [0, base.color.b / 2],
         });
         const baseSemiDark = generateRandomColor({
-            r: [base.color.r / 2, base.color.r],
-            g: [base.color.g / 2, base.color.g],
-            b: [base.color.b / 2, base.color.b],
+            r: [base.color.r / 2 + 1, base.color.r],
+            g: [base.color.g / 2 + 1, base.color.g],
+            b: [base.color.b / 2 + 1, base.color.b],
         });
         const baseSemiLight = generateRandomColor({
-            r: [base.color.r, getValidRgbValue(base.color.r + 30)],
-            g: [base.color.g, getValidRgbValue(base.color.g + 30)],
-            b: [base.color.b, getValidRgbValue(base.color.b + 30)],
+            r: [base.color.r + 1, getValidRgbValue(base.color.r + 30)],
+            g: [base.color.g + 1, getValidRgbValue(base.color.g + 30)],
+            b: [base.color.b + 1, getValidRgbValue(base.color.b + 30)],
         });
         const baseLight = generateRandomColor({
-            r: [getValidRgbValue(base.color.r + 30), 255],
-            g: [getValidRgbValue(base.color.g + 30), 255],
-            b: [getValidRgbValue(base.color.b + 30), 255],
+            r: [getValidRgbValue(base.color.r + 30) + 1, 255],
+            g: [getValidRgbValue(base.color.g + 30) + 1, 255],
+            b: [getValidRgbValue(base.color.b + 30) + 1, 255],
         });
 
         function getValidRgbValue(value) {
