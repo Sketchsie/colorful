@@ -96,7 +96,7 @@ function PaletteCardWrapper(colorsArray) {
     const paletteNodeHammer = new Hammer(paletteNode, { taps: 2 });
     paletteNodeHammer.on("doubletap", toggleFavoritePalette);
     paletteNodeHammer.on("tap", () => console.log("Do anything on click..."));
-    paletteNodeHammer.on("press", window.__openInterfacePreview(colorsArray));
+    paletteNodeHammer.on("press", () => window.__openInterfacePreview(colorsArray));
 
     return paletteNode;
 }
