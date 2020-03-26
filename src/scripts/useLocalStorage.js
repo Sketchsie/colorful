@@ -19,7 +19,7 @@ function initLocalStorage() {
         setPalettes: function (palettes) {
             localStorage.setItem("colorful-palettes", this.JAVASCRIPT2JSON(palettes));
 
-            const newPalettes = JSON2JAVASCRIPT(localStorage.getItem("colorful-palettes"));
+            const newPalettes = this.JSON2JAVASCRIPT(localStorage.getItem("colorful-palettes"));
 
             this.listeners.forEach(listener =>
                 listener.type === this.EVENTS.CHANGE_FAVORITE &&
