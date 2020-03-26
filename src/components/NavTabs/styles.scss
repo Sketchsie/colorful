@@ -1,0 +1,23 @@
+#nav-tab-wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+#nav-tab-container{
+    width: 100%;
+    max-width: 960px;
+
+    display: flex;
+}
+.nav-tab-item-container{
+    display: flex;
+    padding: 12px;
+
+    width: 250px;
+    height: 250px;
+}
+.nav-tab-item-item{
+    flex: 1;
+    background: red;
+}

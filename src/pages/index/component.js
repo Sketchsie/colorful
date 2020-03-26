@@ -29,8 +29,25 @@ const index = function () {
 
             const contentNodes = Layout(() => this.paletteWrapperNode);
 
-            contentNodes.forEach(content => {
-                root.appendChild(content);
+            contentNodes.forEach((content, i) => {
+                const nodeElement = content();
+
+                if (!nodeElement.customTratative) {
+                    root.appendChild(nodeElement);
+                } else {
+                    // Do a custom tratative by Layout HTML order
+                    switch (i) {
+                        case 1:
+                            const { navNode, EmblaCarousel } = nodeElement;
+
+                            root.appendChild(navNode);
+
+                            const options = { containScroll: true }
+
+                            EmblaCarousel(navNode, options);
+                            break;
+                    }
+                }
             });
         },
         addPalette: function (colorsArray) {
