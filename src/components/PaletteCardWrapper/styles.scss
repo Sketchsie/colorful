@@ -42,22 +42,27 @@
     grid-template-columns: 1fr;
 }
 
-.p-item-button{
+.p-item-buttons-wrappers{
     margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, auto));
+    grid-gap: 1rem;
+}
+.p-item-button{
     padding: 8px 10px;
+
     border-radius: 6px;
+    
     text-align: center;
-    background: transparent;
+
     transition: all .2s ease-in-out;
+
     background: var(--content);
+
     color: var(--color-light);
     
     cursor: pointer;
 
-    width: 100%;
-    
-    max-width: 75px;
-    
     font-size: 16px;
 
     border: 1px solid var(--content-hovered);

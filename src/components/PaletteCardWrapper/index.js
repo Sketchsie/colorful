@@ -12,9 +12,14 @@ function PaletteCardWrapper(colorsArray) {
        <section class="p-item-container" data-appear="${dataAppear}"></section>
     `
     const paletteButtonString = `
-       <button class="p-item-button">
-        <i class="fas fa-heart"></i>
-       </button>
+        <div class="p-item-buttons-wrappers">
+            <button class="p-item-button">
+                <i class="far fa-heart"></i>
+            </button>
+            <button class="p-item-button">
+                <i class="fas fa-compress"></i>
+            </button>
+        </div>
     `
     const paletteContainerColorsString = `
         <div class="p-item-colors-wrapper" data-appear="${dataAppear}"></div>
