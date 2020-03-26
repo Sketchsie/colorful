@@ -1,5 +1,7 @@
 import "./styles.scss";
 
+import Hammer from "hammerjs";
+
 import { lightOrDark } from "../../scripts/utils";
 
 const interfacePreview = function () {
@@ -65,6 +67,12 @@ const interfacePreview = function () {
         interfaceNode.classList.add("hide");
     }
     interfaceButtonBackNode.onclick = window.__closeInterfacePreview;
+
+    const interfaceHammer = new Hammer(interfaceNode);
+    interfaceHammer.get("pan").set({ direction: Hammer.DIRECTION_ALL });
+
+    interfaceHammer.on("pandown", () => window.__closeInterfacePreview());
+    interfaceHammer.on("panup", () => window.__closeInterfacePreview());
 
     return interfaceNode;
 }

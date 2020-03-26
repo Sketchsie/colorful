@@ -64,13 +64,9 @@
 .interface-preview-tab-item{
     padding: 1rem 2rem;
     color: inherit;
-    border-bottom: 2px solid transparent;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    &:first-child{
-        border-color: #001970;
-    }
 }
 #interface-preview-button-add{
     position: fixed;
