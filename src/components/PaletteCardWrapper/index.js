@@ -70,11 +70,10 @@ function PaletteCardWrapper(colorsArray) {
             paletteButtonFavoriteIconNode.classList.remove("far");
             paletteButtonFavoriteIconNode.classList.add("fas");
 
-
             useLocalStorage().setPalettes([...currentFavorites, newFavorite]);
         }
-
     }
+    paletteButtonPreviewNode.onclick = () => window.__openInterfacePreview(colorsArray);
 
     paletteButtonNode.appendChild(paletteButtonFavoriteNode);
 
