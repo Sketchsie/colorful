@@ -9,15 +9,29 @@
     max-width: 960px;
 
     display: flex;
+    padding: 2rem 0;
 }
 .nav-tab-item-container{
     display: flex;
     padding: 12px;
 
+    min-width: 250px;
     width: 250px;
-    height: 250px;
 }
-.nav-tab-item-item{
+.nav-tab-item{
+    border-radius: 6px;
     flex: 1;
-    background: red;
+    background: var(--content);
+    transition: all .2s ease-in-out;
+    padding: 1rem;
+    &:hover{
+        background: var(--content-hovered);
+    }
+    &:active{
+        background: var(--content-lightness);
+    }
+    p{
+        padding-top: 5rem;
+        color: var(--color);
+    }
 }

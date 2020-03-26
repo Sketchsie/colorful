@@ -38,11 +38,10 @@ const index = function () {
                     // Do a custom tratative by Layout HTML order
                     switch (i) {
                         case 1:
-                            const { navNode, EmblaCarousel } = nodeElement;
+                            const { navNode, EmblaCarousel, options } = nodeElement;
 
                             root.appendChild(navNode);
 
-                            const options = { containScroll: true }
 
                             EmblaCarousel(navNode, options);
                             break;
