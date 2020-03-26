@@ -36,13 +36,13 @@ const interfacePreview = function () {
         interfaceNode.classList.add("visible");
 
         const interfaceHeader = document.getElementById("interface-preview-container-title");
-        interfaceHeader.style.backgroundColor = palette[0];
+        interfaceHeader.style.backgroundColor = palette[1];
 
         const interfaceBody = document.getElementById("interface-preview-span-container");
-        interfaceBody.style.backgroundColor = palette[2];
+        interfaceBody.style.backgroundColor = palette[3];
 
         const interfaceTabs = document.getElementById("interface-preview-tabs-container");
-        interfaceTabs.style.backgroundColor = palette[3];
+        interfaceTabs.style.backgroundColor = palette[4];
 
         const interfaceDemoButton = document.getElementById("interface-preview-button-add");
         interfaceDemoButton.style.backgroundColor = palette[3];
