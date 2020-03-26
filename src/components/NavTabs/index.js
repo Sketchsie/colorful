@@ -4,34 +4,29 @@ import tabs from "./tabs";
 
 import EmblaCarousel from 'embla-carousel'
 
-function section(){
-    
+function icon(color) {
+    return `
+        <div style="background: ${color}" class="nav-tab-color-icon"></div>
+    `
+}
+function section({ name, icons }) {
+    return `
+    <section class="nav-tab-item-container">
+        <div class="nav-tab-item">
+            <div class="nav-tab-color-icon-wrapper">
+                ${icons.map(iconColor => icon(iconColor)).join("")}
+            </div>
+            <p>${name}</p>
+        </div>
+    </section>
+    `
 }
 function NavColorMode() {
 
     const navString = `
         <nav id="nav-tab-wrapper">
             <div id="nav-tab-container">
-                <section class="nav-tab-item-container">
-                    <div class="nav-tab-item" data-background="#fc5f52">
-                        <p>Favorite</p>
-                    </div>
-                </section>
-                <section class="nav-tab-item-container">
-                    <div class="nav-tab-item">
-                        <p>Teste</p>
-                    </div>
-                </section>
-                <section class="nav-tab-item-container">
-                    <div class="nav-tab-item">
-                        <p>Teste</p>
-                    </div>
-                </section>
-                <section class="nav-tab-item-container">
-                    <div class="nav-tab-item">
-                        <p>Teste</p>
-                    </div>
-                </section>
+                ${tabs.map(tab => section(tab)).join("")}
             </div>
         </nav>
     `;

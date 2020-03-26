@@ -1,27 +1,27 @@
 const tabs = [{
     name: "Dark",
-    background: "#090308"
+    icons: ["#1b040b", "#0b6d05", "#16d006", "#a44d53"]
 },{
     name: "Light",
-    background: "#fffef7"
+    icons: ["#1b040b", "#0b6d05", "#16d006", "#a44d53"]
 },{
     name: "Sun",
-    background: "#ffbc3c"
+    icons: ["#1b040b", "#0b6d05", "#16d006", "#a44d53"]
 },{
     name: "Night",
-    background: "#19444b"
+    icons: ["#1b040b", "#0b6d05", "#16d006", "#a44d53"]
 },{
     name: "Void",
-    background: "#b3c9f0"
+    icons: ["#1b040b", "#0b6d05", "#16d006", "#a44d53"]
 },{
     name: "My Palette's",
-    background: "#0c8c57"
+    icons: ["#1b040b", "#0b6d05", "#16d006", "#a44d53"]
 },{
     name: "My Color's",
-    background: "#ab1556"
+    icons: ["#1b040b", "#0b6d05", "#16d006", "#a44d53"]
 },{
     name: "Tips",
-    background: "#fff5b1"
+    icons: ["#1b040b", "#0b6d05", "#16d006", "#a44d53"]
 }]
 
 

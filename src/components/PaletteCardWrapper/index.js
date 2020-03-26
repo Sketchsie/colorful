@@ -1,3 +1,5 @@
+import "./styles.scss";
+
 import { generateRandomNumber } from "../../scripts/utils";
 
 import PaletteCard from "../PaletteCard";

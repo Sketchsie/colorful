@@ -1,3 +1,5 @@
+import "./styles.scss";
+
 import { copyToClipboard } from "../../scripts/utils";
 
 function PaletteCard(color) {

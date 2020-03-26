@@ -20,8 +20,11 @@
 }
 .nav-tab-item{
     border-radius: 6px;
+    
     flex: 1;
+    
     background: var(--content);
+
     transition: all .2s ease-in-out;
     padding: 1rem;
     &:hover{
@@ -31,7 +34,23 @@
         background: var(--content-lightness);
     }
     p{
-        padding-top: 5rem;
+        padding-top: 3.5rem;
         color: var(--color);
     }
+}
+.nav-tab-color-icon-wrapper{
+    width: 25px;
+    height: 35px;
+
+    background: red;
+    
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 3px;
+
+    overflow: hidden;
+}
+.nav-tab-color-icon{
+    flex: 1;
 }
