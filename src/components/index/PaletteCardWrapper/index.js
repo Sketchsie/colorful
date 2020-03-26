@@ -2,9 +2,9 @@ import "./styles.scss";
 
 import Hammer from "hammerjs";
 
-import { useLocalStorage } from "../../scripts/useLocalStorage";
+import { useLocalStorage } from "../../../scripts/useLocalStorage";
 
-import { generateRandomNumber, createUniqueId } from "../../scripts/utils";
+import { generateRandomNumber, createUniqueId } from "../../../scripts/utils";
 
 import PaletteCard from "../PaletteCard";
 
@@ -94,7 +94,6 @@ function PaletteCardWrapper(colorsArray) {
     paletteButtonFavoriteHammer.on("tap", toggleFavoritePalette);
 
     const paletteNodeHammer = new Hammer(paletteNode, { taps: 2 });
-
     paletteNodeHammer.on("doubletap", toggleFavoritePalette);
     paletteNodeHammer.on("tap", () => console.log("Do anything on click..."));
     paletteNodeHammer.on("press", window.__openInterfacePreview);

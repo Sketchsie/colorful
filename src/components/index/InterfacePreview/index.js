@@ -2,7 +2,7 @@ import "./styles.scss";
 
 import Hammer from "hammerjs";
 
-import { lightOrDark } from "../../scripts/utils";
+import { lightOrDark } from "../../../scripts/utils";
 
 const interfacePreview = function () {
     const interfaceButtonBackString = `

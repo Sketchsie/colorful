@@ -1,5 +1,5 @@
-import Layout from "../../components/Layout"
-import PaletteCardWrapper from "../../components/PaletteCardWrapper";
+import Layout from "../../components/index/Layout"
+import PaletteCardWrapper from "../../components/index/PaletteCardWrapper";
 
 const index = function () {
     const root = document.getElementById("root");

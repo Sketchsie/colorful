@@ -2,9 +2,9 @@ import "./styles.scss";
 
 import Hammer from "hammerjs";
 
-import { redirect } from "../../scripts/redirectTo";
+import { redirect } from "../../../scripts/redirectTo";
 
-import { generateRandomNumber } from "../../scripts/utils";
+import { generateRandomNumber } from "../../../scripts/utils";
 
 import tabs from "./tabs";
 
