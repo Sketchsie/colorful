@@ -22,7 +22,6 @@ const index = function () {
         init: function () {
             root.innerHTML = "";
 
-
             this.paletteWrapperNode = this.paletteWrapper.stringToHTML();
             this.paletteContainerNode = this.paletteContainer.stringToHTML();
 
