@@ -4,8 +4,6 @@ import { debounce, fullColorHex } from "../../scripts/utils";
 
 import "../../assets/images/logo.png"
 
-import "./styles.scss";
-
 const IndexTemplatePage = {
 
     index: null,
