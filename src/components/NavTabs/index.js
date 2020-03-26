@@ -22,7 +22,7 @@ function NavItemTabContainer({ name, icons, path }) {
         <div class="nav-tab-item-container" data-appear="${dataAppear}"></div>
     `
     const navItemTabItemString = `
-        <div teste="testeeeeeeeeeeee" class="nav-tab-item" style="border: 2px solid transparent; border-image: linear-gradient(to left, ${icons[0]}, ${icons[3]});border-image-slice: 1;">
+        <div class="nav-tab-item" style="border: 2px solid transparent; border-image: linear-gradient(to left, ${icons[0]}, ${icons[3]});border-image-slice: 1;">
             <div class="nav-tab-color-icon-wrapper">
                 ${icons.map(iconColor => Icon(iconColor)).join("")}
             </div>

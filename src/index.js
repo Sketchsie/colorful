@@ -3,6 +3,10 @@ import "./styles/style.scss"
 // Router
 import Router from "./routes"
 
+
+// Local Storage To Storage Palette's
+import initLocalStorage from "./scripts/useLocalStorage";
+
 // Redirect
 import Redirect from "./scripts/redirectTo";
 
@@ -30,5 +34,5 @@ document.addEventListener('DOMContentLoaded', () => {
     Redirect(routes);
 
     routes.init();
-
+    initLocalStorage();
 });
