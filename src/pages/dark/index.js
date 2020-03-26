@@ -3,7 +3,11 @@ import IndexTemplate from "../index-template"
 import { generateRandomColor } from "../../scripts/utils";
 
 function generatePalette() {
-    const base = generateRandomColor();
+    const base = generateRandomColor({
+        r: [0, 160],
+        g: [0, 160],
+        b: [0, 160],
+    });
     const baseDark = generateRandomColor({
         r: [0, base.color.r / 2],
         g: [0, base.color.g / 2],
@@ -36,11 +40,11 @@ function generatePalette() {
     }
 }
 
-const IndexPage = {
+const DarkPage = {
     render: function () {
-        console.log("voce esta na random");
+        console.log("voce esta na dark");
         IndexTemplate.render(generatePalette);
     }
 }
 
-export default IndexPage;
+export default DarkPage;

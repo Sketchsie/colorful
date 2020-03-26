@@ -1,5 +1,7 @@
 import "./styles.scss";
 
+import { redirect } from "../../scripts/redirectTo";
+
 import { generateRandomNumber } from "../../scripts/utils";
 
 import tabs from "./tabs";
@@ -11,10 +13,10 @@ function Icon(color) {
         <div style="background: ${color}" class="nav-tab-color-icon"></div>
     `
 }
-function NavItemTabContainer({ name, icons }) {
+function NavItemTabContainer({ name, icons, path }) {
     const dataAppear = generateRandomNumber(0, 1) === 1 ? "right" : "left";
 
-    return `
+    const navItemTabContainerString = `
     <section class="nav-tab-item-container" data-appear="${dataAppear}">
         <div class="nav-tab-item">
             <div class="nav-tab-color-icon-wrapper">
@@ -24,23 +26,37 @@ function NavItemTabContainer({ name, icons }) {
         </div>
     </section>
     `
+    const navItemTabContainerNode = navItemTabContainerString.stringToHTML();
+
+    navItemTabContainerNode.onclick = function () {
+        console.log(this);
+    }
+
+    return navItemTabContainerNode;
 }
 function NavTabs() {
-    const navString = `
+
+    const navWrapperString = `
         <nav id="nav-tab-wrapper">
-            <div id="nav-tab-container">
-                ${tabs.map(tab => NavItemTabContainer(tab)).join("")}
-            </div>
         </nav>
+    `
+    const navContainerString = `
+        <div id="nav-tab-container"></div>
     `;
 
-    const navNode = navString.stringToHTML();
+    const navWrapperNode = navWrapperString.stringToHTML();
+    const navContainerNode = navContainerString.stringToHTML();
+
+    tabs.forEach(tab => navContainerNode.appendChild(NavItemTabContainer(tab)))
+
+    navWrapperNode.appendChild(navContainerNode);
 
     const options = {
         containScroll: true,
         dragFree: true
     }
-    return { navNode, EmblaCarousel, customTratative: true, options };
+
+    return { navNode: navWrapperNode, EmblaCarousel, customTratative: true, options };
 }
 
 export default NavTabs;
