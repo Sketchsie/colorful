@@ -26,9 +26,9 @@ body{
 body.dark{
   background: #1a1218;
   --background: #1a1218;
-  --content: #1c1921;
-  --content-hovered: #1f2837;
-  --content-lightness: #2f3847;
+  --content: #1f2837;
+  --content-hovered: #2f3847;
+  --content-lightness: rgb(41, 50, 65);
   // #08080c
   // #1a1218
   // #1c1921
@@ -47,7 +47,7 @@ body.light{
   --background: #f1f1f1;
   --content: #fff;
   --content-hovered: rgb(245, 252, 255);
-  --content-lightness: rgb(248, 255, 255);
+  --content-lightness: rgb(235, 242, 245);
 
   --box-shadow: 0 10px 40px -10px rgba(0,64,128,.2);
   --box-shadow-light: 0 10px 40px -10px rgba(0,64,128,.2);

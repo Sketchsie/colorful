@@ -1,32 +1,35 @@
 import "./styles.scss";
 
+import { generateRandomNumber } from "../../scripts/utils";
+
 import tabs from "./tabs";
 
 import EmblaCarousel from 'embla-carousel'
 
-function icon(color) {
+function Icon(color) {
     return `
         <div style="background: ${color}" class="nav-tab-color-icon"></div>
     `
 }
-function section({ name, icons }) {
+function NavItemTabContainer({ name, icons }) {
+    const dataAppear = generateRandomNumber(0, 1) === 1 ? "right" : "left";
+
     return `
-    <section class="nav-tab-item-container">
+    <section class="nav-tab-item-container" data-appear="${dataAppear}">
         <div class="nav-tab-item">
             <div class="nav-tab-color-icon-wrapper">
-                ${icons.map(iconColor => icon(iconColor)).join("")}
+                ${icons.map(iconColor => Icon(iconColor)).join("")}
             </div>
             <p>${name}</p>
         </div>
     </section>
     `
 }
-function NavColorMode() {
-
+function NavTabs() {
     const navString = `
         <nav id="nav-tab-wrapper">
             <div id="nav-tab-container">
-                ${tabs.map(tab => section(tab)).join("")}
+                ${tabs.map(tab => NavItemTabContainer(tab)).join("")}
             </div>
         </nav>
     `;
@@ -40,4 +43,4 @@ function NavColorMode() {
     return { navNode, EmblaCarousel, customTratative: true, options };
 }
 
-export default NavColorMode;
+export default NavTabs;
