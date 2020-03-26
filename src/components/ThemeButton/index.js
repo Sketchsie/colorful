@@ -7,7 +7,16 @@ function ThemeButton() {
         </button>
     `
     const buttonNode = buttonString.stringToHTML();
-    buttonNode.onclick = () => window.__setPreferredTheme(window.__theme === "dark" ? "light" : "dark");
+    buttonNode.onclick = () => {
+        window.__toggleTransitionSpan();
+        setTimeout(() => {
+            window.__setPreferredTheme(window.__theme === "dark" ? "light" : "dark");
+            setTimeout(() => {
+                window.__toggleTransitionSpan();
+            }, 300);
+        }, 300);
+
+    };
     return buttonNode;
 }
 

@@ -1,0 +1,26 @@
+#scrolltop-button{
+    position: fixed;
+    left: 12px;
+    bottom: 79px;
+    
+    background: var(--content-hovered);
+
+    padding: 12px;
+
+    width: 55px;
+    height: 55px;
+
+    color: var(--color);
+
+    box-shadow: var(--box-shadow-light);
+
+    font-size: 1.3em;
+
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+}
