@@ -34,40 +34,40 @@ function generateRandomColor(userConfig = {}) {
     };
 }
 
-function generateRandomColorPalette(userColor = {}, userVariant = {}) {
+function generateRandomColorPalette(userColor = {}, userletiant = {}) {
     const { color: defaultColor } = generateRandomColor();
-    const defaultVariant = { vR: 15, vG: 15, vB: 15, vA: 200 };
+    const defaultletiant = { vR: 15, vG: 15, vB: 15, vA: 200 };
 
     const color = Object.assign({}, defaultColor, userColor);
-    const variant = Object.assign({}, defaultVariant, userVariant);
+    const letiant = Object.assign({}, defaultletiant, userletiant);
 
     const { r, g, b, a } = color;
-    const { vR, vG, vB, vA } = variant;
+    const { vR, vG, vB, vA } = letiant;
 
     const palette = {
-        r: getVariant({ variant: vR, num: r }),
-        g: getVariant({ variant: vG, num: g }),
-        b: getVariant({ variant: vB, num: b }),
-        a: getVariant({ variant: vA, num: a * 1000, max: 1000, min: 0 }).map(item => item / 1000),
+        r: getletiant({ letiant: vR, num: r }),
+        g: getletiant({ letiant: vG, num: g }),
+        b: getletiant({ letiant: vB, num: b }),
+        a: getletiant({ letiant: vA, num: a * 1000, max: 1000, min: 0 }).map(item => item / 1000),
     }
 
-    function getVariant(userConfig = {}) {
+    function getletiant(userConfig = {}) {
         const defaultConfig = {
             min: 0,
             max: 255,
             num: generateRandomNumber(0, 255),
-            variant: 15
+            letiant: 15
         }
         const config = Object.assign({}, defaultConfig, userConfig);
 
-        let { num, min, max, variant } = config;
+        let { num, min, max, letiant } = config;
 
-        if (num + variant >= max) {
-            num = [num - variant, max];
-        } else if (num - variant < min) {
-            num = [min, num + variant];
+        if (num + letiant >= max) {
+            num = [num - letiant, max];
+        } else if (num - letiant < min) {
+            num = [min, num + letiant];
         } else {
-            num = [num - variant, num + variant]
+            num = [num - letiant, num + letiant]
         }
         return num;
     }
@@ -102,6 +102,28 @@ function fullColorHex(r, g, b) {
     let blue = rgbToHex(b);
     return red + green + blue;
 };
+
+function debounce(func, wait = 260, immediate) {
+    let timeout;
+
+    return function executedFunction() {
+        let context = this;
+        let args = arguments;
+
+        let later = function () {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+
+        let callNow = immediate && !timeout;
+
+        clearTimeout(timeout);
+
+        timeout = setTimeout(later, wait);
+
+        if (callNow) func.apply(context, args);
+    };
+};
 export {
     generateRandomNumber,
     generateRandomColor,
@@ -109,5 +131,6 @@ export {
     firstLetterUppercase,
     copyToClipboard,
     rgbToHex,
-    fullColorHex
+    fullColorHex,
+    debounce
 }

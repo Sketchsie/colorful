@@ -1,6 +1,6 @@
 import index from "./component";
 
-import { generateRandomColor, generateRandomColorPalette, fullColorHex } from "../../scripts/utils";
+import { generateRandomColor, debounce, fullColorHex } from "../../scripts/utils";
 
 import "../../assets/images/logo.svg"
 
@@ -9,6 +9,7 @@ import "./styles.scss";
 const IndexPage = {
 
     index: null,
+    doc: document.documentElement,
 
     render: function () {
         this.index = index();
@@ -17,19 +18,34 @@ const IndexPage = {
     init: function () {
         this.loadMore(this);
         this.infiniteScroll();
+        this.scrollToAppear();
     },
     loadMore: function () {
         for (let index = 0; index < 30; index++) {
             this.renderPalette();
         }
     },
+    scrollToAppear: function () {
+        function inView(el) {
+            const sb = this.doc.getBoundingClientRect();
+            const eb = el.getBoundingClientRect();
+            return !((eb.top + eb.height < 0) || (eb.top > sb.height));
+        }
+        function updateInView() {
+            for (const x of document.querySelectorAll('*[data-appear]')) {
+                if (inView.apply(this, [x])) x.setAttribute("data-appear", "visible");
+                else x.setAttribute("data-appear", "right");
+            }
+        }
+        window.addEventListener("scroll", debounce(updateInView.bind(this)));
+        updateInView.call(this);
+    },
     infiniteScroll: function () {
-        const doc = document.documentElement;
-        window.addEventListener("scroll", function () {
-            const value = parseInt(100 * doc.scrollTop / (doc.scrollHeight - doc.clientHeight))
+        window.addEventListener("scroll", debounce(function () {
+            const value = parseInt(100 * this.doc.scrollTop / (this.doc.scrollHeight - this.doc.clientHeight))
             if (value >= 50)
                 this.loadMore();
-        }.bind(this));
+        }.bind(this)));
     },
     renderPalette: function () {
         const base = generateRandomColor();
