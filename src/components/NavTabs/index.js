@@ -17,14 +17,14 @@ function NavItemTabContainer({ name, icons, path }) {
     const dataAppear = generateRandomNumber(0, 1) === 1 ? "right" : "left";
 
     const navItemTabContainerString = `
-    <a href="${path}" class="nav-tab-item-container" data-appear="${dataAppear}">
-        <div class="nav-tab-item">
+    <div class="nav-tab-item-container" data-appear="${dataAppear}">
+        <div style="border: 2px solid transparent; border-image: linear-gradient(to left, ${icons[0]}, ${icons[3]});border-image-slice: 1;" class="nav-tab-item">
             <div class="nav-tab-color-icon-wrapper">
                 ${icons.map(iconColor => Icon(iconColor)).join("")}
             </div>
             <p>${name}</p>
         </div>
-    </a>
+    </div>
     `
     const navItemTabContainerNode = navItemTabContainerString.stringToHTML();
 
