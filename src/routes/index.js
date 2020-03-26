@@ -82,7 +82,10 @@ const Router = function () {
 
             this.pathname = window.location.pathname;
 
-            window.onpopstate = this.match.bind(this);
+            window.onpopstate = function () {
+                this.pathname = window.location.pathname;
+                this.match.call(this);
+            }.bind(this);
 
             this.match();
         }

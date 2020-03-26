@@ -4,11 +4,11 @@ const tabs = [{
     path: "my"
 }, {
     name: "Random",
-    icons: ["#9a274b", "#491562", "#57c09a", "#fbe555"],
+    icons: ["#0a0b49", "#29967f", "#52eaa2", "#dbfff1"],
     path: "/"
 }, {
     name: "Dark",
-    icons: ["#301443", "#491562", "#501880", "#a57edb"],
+    icons: ["#561255", "#781a62", "#8c2c7b", "#a57edb"],
     path: "/dark"
 }, {
     name: "Light",
