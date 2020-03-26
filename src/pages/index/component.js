@@ -1,4 +1,4 @@
-import NavBar from "../../components/NavBar"
+import Layout from "../../components/Layout"
 import PaletteCardWrapper from "../../components/PaletteCardWrapper";
 
 const index = function () {
@@ -21,13 +21,18 @@ const index = function () {
 
         init: function () {
             root.innerHTML = "";
+
+
             this.paletteWrapperNode = this.paletteWrapper.stringToHTML();
             this.paletteContainerNode = this.paletteContainer.stringToHTML();
 
             this.paletteWrapperNode.appendChild(this.paletteContainerNode);
 
-            root.appendChild(NavBar());
-            root.appendChild(this.paletteWrapperNode);
+            const contentNodes = Layout(() => this.paletteWrapperNode);
+
+            contentNodes.forEach(content => {
+                root.appendChild(content);
+            });
         },
         addPalette: function (colorsArray) {
 

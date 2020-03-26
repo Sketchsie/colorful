@@ -23,12 +23,16 @@ body{
   overscroll-behavior-y: contain;
 }
 body.dark{
-  background: #130f1d;
-  --background: #130f1d;
-  --content: #141236;
-  --content-hovered: #251941;
-  --content-lightness: #262042;
-  --box-shadow: 1px 2px 12px 3px #130f1d;
+  background: #1a1218;
+  --background: #1a1218;
+  --content: #1c1921;
+  --content-hovered: #1f2837;
+  --content-lightness: #1f2837;
+  // #08080c
+  // #1a1218
+  // #1c1921
+  // #3f4c88
+  --box-shadow: 1px 2px 12px 3px #08080c;
   --color: #fff;
   --color-light: rgba(255,255,255,.7);
   --img-gray-on-dark: grayscale(100%);
