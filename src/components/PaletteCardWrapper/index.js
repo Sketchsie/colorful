@@ -17,7 +17,7 @@ function PaletteCardWrapper(colorsArray) {
                 <i class="far fa-heart"></i>
             </button>
             <button class="p-item-button">
-                <i class="fas fa-compress"></i>
+                <i class="fas fa-expand"></i>
             </button>
         </div>
     `

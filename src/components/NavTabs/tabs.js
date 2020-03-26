@@ -1,4 +1,7 @@
 const tabs = [{
+    name: "My Palette's",
+    icons: ["#9a274b", "#db3765", "#f44069", "#ff8ca7"]
+}, {
     name: "Dark",
     icons: ["#301443", "#491562", "#501880", "#a57edb"]
 }, {
@@ -13,9 +16,6 @@ const tabs = [{
 }, {
     name: "Void",
     icons: ["#252a42", "#2b3751", "#353b53", "#afd8bb"]
-}, {
-    name: "My Palette's",
-    icons: ["#9a274b", "#db3765", "#f44069", "#ff8ca7"]
 }, {
     name: "Tips",
     icons: ["#2c1026", "#4c666f", "#57c09a", "#b6f8d6"]
