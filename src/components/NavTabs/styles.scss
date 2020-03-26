@@ -12,8 +12,6 @@
     padding: 2rem 0;
 }
 .nav-tab-item-container{
-    // cursor: pointer;
-
     display: flex;
     padding: 12px;
 
@@ -21,6 +19,8 @@
     width: 250px;
 }
 .nav-tab-item{
+    cursor: pointer;
+
     border-radius: 6px;
     
     flex: 1;

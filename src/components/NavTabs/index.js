@@ -1,5 +1,7 @@
 import "./styles.scss";
 
+import Hammer from "hammerjs";
+
 import { redirect } from "../../scripts/redirectTo";
 
 import { generateRandomNumber } from "../../scripts/utils";
@@ -17,21 +19,23 @@ function NavItemTabContainer({ name, icons, path }) {
     const dataAppear = generateRandomNumber(0, 1) === 1 ? "right" : "left";
 
     const navItemTabContainerString = `
-    <div class="nav-tab-item-container" data-appear="${dataAppear}">
-        <div style="border: 2px solid transparent; border-image: linear-gradient(to left, ${icons[0]}, ${icons[3]});border-image-slice: 1;" class="nav-tab-item">
+        <div class="nav-tab-item-container" data-appear="${dataAppear}"></div>
+    `
+    const navItemTabItemString = `
+        <div teste="testeeeeeeeeeeee" class="nav-tab-item" style="border: 2px solid transparent; border-image: linear-gradient(to left, ${icons[0]}, ${icons[3]});border-image-slice: 1;">
             <div class="nav-tab-color-icon-wrapper">
                 ${icons.map(iconColor => Icon(iconColor)).join("")}
             </div>
             <p>${name}</p>
         </div>
-    </div>
     `
     const navItemTabContainerNode = navItemTabContainerString.stringToHTML();
+    const navItemTabItemNode = navItemTabItemString.stringToHTML();
 
-    navItemTabContainerNode.onclick = function (e) {
-        e.preventDefault();
-        redirect(path);
-    }
+    const NavItemTabNodeHammer = new Hammer(navItemTabItemNode);
+    NavItemTabNodeHammer.on("tap", () => redirect(path));
+
+    navItemTabContainerNode.appendChild(navItemTabItemNode);
 
     return navItemTabContainerNode;
 }

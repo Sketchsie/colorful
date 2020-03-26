@@ -42,7 +42,6 @@ const index = function () {
 
                             root.appendChild(navNode);
 
-
                             EmblaCarousel(navNode, options);
                             break;
                     }
