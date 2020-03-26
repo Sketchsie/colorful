@@ -71,7 +71,7 @@ img{
 }
 
 *[data-appear]{
-  transition: all .5s ease-in-out;
+  transition: all .3s ease-in;
 }
 *[data-appear=right]{
   opacity: 0;

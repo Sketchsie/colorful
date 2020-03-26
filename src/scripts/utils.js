@@ -103,7 +103,7 @@ function fullColorHex(r, g, b) {
     return red + green + blue;
 };
 
-function debounce(func, wait = 260, immediate) {
+function debounce(func, wait = 100, immediate) {
     let timeout;
 
     return function executedFunction() {

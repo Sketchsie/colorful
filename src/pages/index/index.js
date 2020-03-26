@@ -26,15 +26,17 @@ const IndexPage = {
         }
     },
     scrollToAppear: function () {
-        function inView(el) {
+        function inView(node) {
             const sb = this.doc.getBoundingClientRect();
-            const eb = el.getBoundingClientRect();
+            const eb = node.getBoundingClientRect();
             return !((eb.top + eb.height < 0) || (eb.top > sb.height));
         }
         function updateInView() {
-            for (const x of document.querySelectorAll('*[data-appear]')) {
-                if (inView.apply(this, [x])) x.setAttribute("data-appear", "visible");
-                else x.setAttribute("data-appear", "right");
+            for (const palette of document.querySelectorAll('*[data-appear]')) {
+                if (inView.apply(this, [palette]))
+                    palette.setAttribute("data-appear", "visible");
+                else
+                    palette.setAttribute("data-appear", "right");
             }
         }
         window.addEventListener("scroll", debounce(updateInView.bind(this)));
