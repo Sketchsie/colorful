@@ -1,12 +1,42 @@
 import "./styles.scss";
 
+import Hammer from "hammerjs";
+
 import { useLocalStorage } from "../../scripts/useLocalStorage";
 
-import { generateRandomNumber, createUniqueId, lightOrDark } from "../../scripts/utils";
+import { generateRandomNumber, createUniqueId } from "../../scripts/utils";
 
 import PaletteCard from "../PaletteCard";
 
 function PaletteCardWrapper(colorsArray) {
+
+    function toggleFavoritePalette() {
+
+        const id = paletteButtonFavoriteNode.getAttribute("palette-id");
+
+        const currentFavorites = useLocalStorage().getPalettes();
+
+        if (!!currentFavorites.filter(fav => fav.id === id)[0]) {
+            paletteButtonFavoriteNode.style.background = "transparent";
+            paletteButtonFavoriteIconNode.style.color = "var(--color-light)";
+            paletteButtonFavoriteIconNode.classList.remove("fas");
+            paletteButtonFavoriteIconNode.classList.add("far");
+
+            useLocalStorage().setPalettes(currentFavorites.filter(fav => fav.id !== id));
+        } else {
+            const newFavorite = {
+                colors: colorsArray,
+                id,
+                date: new Date()
+            }
+            paletteButtonFavoriteNode.style.background = colorsArray[1];
+            paletteButtonFavoriteIconNode.style.color = "#fff";
+            paletteButtonFavoriteIconNode.classList.remove("far");
+            paletteButtonFavoriteIconNode.classList.add("fas");
+
+            useLocalStorage().setPalettes([...currentFavorites, newFavorite]);
+        }
+    }
 
     const dataAppear = generateRandomNumber(0, 1) === 1 ? "right" : "left";
 
@@ -46,33 +76,7 @@ function PaletteCardWrapper(colorsArray) {
 
     const paletteContainerColorsNode = paletteContainerColorsString.stringToHTML();
 
-    paletteButtonFavoriteNode.onclick = () => {
 
-        const id = paletteButtonFavoriteNode.getAttribute("palette-id");
-
-        const currentFavorites = useLocalStorage().getPalettes();
-
-        if (!!currentFavorites.filter(fav => fav.id === id)[0]) {
-            paletteButtonFavoriteNode.style.background = "transparent";
-            paletteButtonFavoriteIconNode.style.color = "var(--color-light)";
-            paletteButtonFavoriteIconNode.classList.remove("fas");
-            paletteButtonFavoriteIconNode.classList.add("far");
-
-            useLocalStorage().setPalettes(currentFavorites.filter(fav => fav.id !== id));
-        } else {
-            const newFavorite = {
-                colors: colorsArray,
-                id,
-                date: new Date()
-            }
-            paletteButtonFavoriteNode.style.background = colorsArray[1];
-            paletteButtonFavoriteIconNode.style.color = "#fff";
-            paletteButtonFavoriteIconNode.classList.remove("far");
-            paletteButtonFavoriteIconNode.classList.add("fas");
-
-            useLocalStorage().setPalettes([...currentFavorites, newFavorite]);
-        }
-    }
     paletteButtonPreviewNode.onclick = () => window.__openInterfacePreview(colorsArray);
 
     paletteButtonNode.appendChild(paletteButtonFavoriteNode);
@@ -85,6 +89,15 @@ function PaletteCardWrapper(colorsArray) {
 
     paletteNode.appendChild(paletteContainerColorsNode);
     paletteNode.appendChild(paletteButtonNode);
+
+    const paletteButtonFavoriteHammer = new Hammer(paletteButtonFavoriteNode);
+    paletteButtonFavoriteHammer.on("tap", toggleFavoritePalette);
+
+    const paletteNodeHammer = new Hammer(paletteNode, { taps: 2 });
+
+    paletteNodeHammer.on("doubletap", toggleFavoritePalette);
+    paletteNodeHammer.on("tap", () => console.log("Do anything on click..."));
+    paletteNodeHammer.on("press", window.__openInterfacePreview);
 
     return paletteNode;
 }
