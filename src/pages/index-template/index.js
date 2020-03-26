@@ -2,7 +2,7 @@ import index from "./component";
 
 import { generateRandomColor, debounce, fullColorHex } from "../../scripts/utils";
 
-import "../../assets/images/logo.png"
+import "../../assets/images/logo.svg"
 
 import "./styles.scss";
 
@@ -35,6 +35,8 @@ const IndexPage = {
             for (const palette of document.querySelectorAll('*[data-appear]')) {
                 if (inView.apply(this, [palette]))
                     palette.setAttribute("data-appear", "visible");
+                else
+                    palette.setAttribute("data-appear", "right");
             }
         }
         window.addEventListener("scroll", debounce(updateInView.bind(this)));
