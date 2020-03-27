@@ -4,24 +4,58 @@ import { debounce, fullColorHex } from "../../scripts/utils";
 
 import "../../assets/images/logo.png"
 
+function defaultRenderPalette() {
+    const {
+        baseDark,
+        baseSemiDark,
+        base,
+        baseSemiLight,
+        baseLight
+    } = this.generatePalette();
+    this.index.addPalette(
+        {
+            hex: [
+                "#" + fullColorHex(baseDark.color.r, baseDark.color.g, baseDark.color.b),
+                "#" + fullColorHex(baseSemiDark.color.r, baseSemiDark.color.g, baseSemiDark.color.b),
+                "#" + fullColorHex(base.color.r, base.color.g, base.color.b),
+                "#" + fullColorHex(baseSemiLight.color.r, baseSemiLight.color.g, baseSemiLight.color.b),
+                "#" + fullColorHex(baseLight.color.r, baseLight.color.g, baseLight.color.b)
+            ],
+        }
+    );
+}
+
+function defaultLoadMore() {
+    for (let index = 0; index < 30; index++) {
+        this.renderPalette();
+    }
+}
+
 const IndexTemplatePage = {
 
     index: null,
     generatePalette: null,
     doc: document.documentElement,
 
-    render: function (functionToGenerateColors, useFixePalettes = false) {
-        this.cleanEventListeners();
+    currentRenderIndex: 0,
+
+    render: function (functionToGenerateColors, useFixePalettes = false, renderPalette = false) {
+        this.clearEventListeners();
 
         this.index = index();
+
+        if (renderPalette) this.renderPalette = renderPalette.bind(this);
+        else this.renderPalette = defaultRenderPalette.bind(this);
 
         if (useFixePalettes) return this.renderFixedPalettes(useFixePalettes);
 
         this.generatePalette = functionToGenerateColors
+        this.loadMore = defaultLoadMore.bind(this);
         this.init();
     },
 
-    cleanEventListeners: function () {
+    clearEventListeners: function () {
+        this.currentRenderIndex = 0;
         if (this.scrollToAppearFunction) window.removeEventListener("scroll", this.scrollToAppearFunction);
         if (this.infiniteScrollFunction) window.removeEventListener("scroll", this.infiniteScrollFunction);
     },
@@ -42,11 +76,7 @@ const IndexTemplatePage = {
         this.infiniteScroll();
         this.scrollToAppear();
     },
-    loadMore: function () {
-        for (let index = 0; index < 30; index++) {
-            this.renderPalette();
-        }
-    },
+    loadMore: null,
 
     scrollToAppearFunction: null,
     setScrollToAppearFunction: function () {
@@ -72,35 +102,20 @@ const IndexTemplatePage = {
     infiniteScrollFunction: null,
     setInfiniteScrollFunction: function () {
         this.infiniteScrollFunction = debounce(function () {
+            console.log("huehuh");
             const value = parseInt(100 * this.doc.scrollTop / (this.doc.scrollHeight - this.doc.clientHeight))
             if (value >= 50)
                 this.loadMore();
+            if (value >= 98 && !(document.querySelector('*[data-appear=left]') || document.querySelector('*[data-appear=right]')))
+                this.clearEventListeners();
+
         }.bind(this));
     },
     infiniteScroll: function () {
         this.setInfiniteScrollFunction();
         window.addEventListener("scroll", this.infiniteScrollFunction);
     },
-    renderPalette: function () {
-        const {
-            baseDark,
-            baseSemiDark,
-            base,
-            baseSemiLight,
-            baseLight
-        } = this.generatePalette();
-        this.index.addPalette(
-            {
-                hex: [
-                    "#" + fullColorHex(baseDark.color.r, baseDark.color.g, baseDark.color.b),
-                    "#" + fullColorHex(baseSemiDark.color.r, baseSemiDark.color.g, baseSemiDark.color.b),
-                    "#" + fullColorHex(base.color.r, base.color.g, base.color.b),
-                    "#" + fullColorHex(baseSemiLight.color.r, baseSemiLight.color.g, baseSemiLight.color.b),
-                    "#" + fullColorHex(baseLight.color.r, baseLight.color.g, baseLight.color.b)
-                ],
-            }
-        );
-    }
+    renderPalette: null
 }
 
 export default IndexTemplatePage;
