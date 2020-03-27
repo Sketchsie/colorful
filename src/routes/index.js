@@ -1,3 +1,5 @@
+const pathbase = process.env.PATH_BASE;
+
 const Router = function () {
 
     const instance = {
@@ -72,6 +74,15 @@ const Router = function () {
                 callback
             });
         },
+        setPathname: function (newPathname) {
+            let validPathname = null;
+            if (pathbase === "/") {
+                validPathname = newPathname;
+            } else {
+                validPathname = newPathname.substring(pathbase.length);
+            }
+            this.pathname = validPathname;
+        },
         redirectTo: function (pathname) {
             this.pathname = pathname;
             history.pushState({}, pathname, pathname);
@@ -80,10 +91,10 @@ const Router = function () {
         init: function () {
             if (!window) return;
 
-            this.pathname = window.location.pathname;
+            this.setPathname(window.location.pathname);
 
             window.onpopstate = function () {
-                this.pathname = window.location.pathname;
+                this.setPathname(window.location.pathname);
                 this.match.call(this);
             }.bind(this);
 
