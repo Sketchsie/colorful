@@ -11,12 +11,19 @@ const IndexTemplatePage = {
     doc: document.documentElement,
 
     render: function (functionToGenerateColors, useFixePalettes = false) {
+        this.cleanEventListeners();
+
         this.index = index();
 
         if (useFixePalettes) return this.renderFixedPalettes(useFixePalettes);
 
         this.generatePalette = functionToGenerateColors
         this.init();
+    },
+
+    cleanEventListeners: function () {
+        if (this.scrollToAppearFunction) window.removeEventListener("scroll", this.scrollToAppearFunction);
+        if (this.infiniteScrollFunction) window.removeEventListener("scroll", this.infiniteScrollFunction);
     },
     renderFixedPalettes: function (palettesArrayWithID) {
         palettesArrayWithID.reverse();
@@ -28,9 +35,6 @@ const IndexTemplatePage = {
                 palette.id
             );
         });
-        if (this.scrollToAppearFunction) window.removeEventListener("scroll", this.scrollToAppearFunction);
-        if (this.infiniteScrollFunction) window.removeEventListener("scroll", this.infiniteScrollFunction);
-
         this.scrollToAppear();
     },
     init: function () {

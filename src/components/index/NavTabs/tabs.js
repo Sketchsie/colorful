@@ -1,7 +1,7 @@
 const tabs = [{
     name: "My Palette's",
     icons: ["#9a274b", "#db3765", "#f44069", "#ff8ca7"],
-    path: "my"
+    path: "/my"
 }, {
     name: "Random",
     icons: ["#0a0b49", "#29967f", "#52eaa2", "#dbfff1"],
