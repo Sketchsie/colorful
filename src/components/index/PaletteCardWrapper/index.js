@@ -99,10 +99,6 @@ function PaletteCardWrapper(colorsArray, id) {
 
     paletteButtonNode.appendChild(paletteButtonPreviewNode);
 
-    // colorsArray.forEach(color => {
-    //     paletteContainerColorsNode.appendChild(PaletteCard(color));
-    // });
-
     paletteNode.appendChild(paletteContainerColorsNode);
     paletteNode.appendChild(paletteButtonNode);
 
