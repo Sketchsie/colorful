@@ -41,7 +41,7 @@
 .p-item-buttons-wrappers{
     margin-top: 10px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(75px, auto));
+    grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
 }
 .p-item-button{
@@ -75,13 +75,41 @@ i.fa-heart{
     transition: all .3s ease-in-out;
 }
 
-@media screen and (max-width: 680px){
+@media screen and (min-width: 570px){
     #palette-container{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 0.3rem;
         padding: 1rem;
     }
+}
+@media screen and (min-width: 854px){
+    #palette-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media screen and (min-width: 1000px){
+    #palette-container{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+@media screen and (max-width: 680px){
+    .p-item-container{
+        height: 300px;
+    }
     .p-item-buttons-wrappers{
         grid-gap: 0.5rem;
+    }
+}
+@media screen and (max-width: 570px){
+    #palette-container{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media screen and (max-width: 300px){
+    #palette-container{
+        grid-template-columns: 1fr;
+    }
+    .p-item-container{
+        height: 240px;
     }
 }
