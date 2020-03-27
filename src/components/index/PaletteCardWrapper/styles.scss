@@ -55,6 +55,7 @@
 
     background: var(--content);
 
+    border: 1px solid var(--content-hovered);
     
     cursor: pointer;
 
@@ -62,7 +63,6 @@
 
     color: var(--color-light);
 
-    border: 1px solid var(--content-hovered);
     &:hover{
         background: var(--content-hovered);
         color: var(--color);

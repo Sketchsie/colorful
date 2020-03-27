@@ -34,6 +34,8 @@ function PaletteCardWrapper(colorsArray, id) {
 
         if (!!currentFavorites.filter(fav => fav.id === id)[0]) {
             paletteButtonFavoriteNode.style.background = "transparent";
+            paletteButtonFavoriteNode.style.border = "1px solid var(--content-hovered)";
+
             paletteButtonFavoriteIconNode.style.color = "var(--color-light)";
             paletteButtonFavoriteIconNode.classList.remove("fas");
             paletteButtonFavoriteIconNode.classList.add("far");
@@ -46,6 +48,8 @@ function PaletteCardWrapper(colorsArray, id) {
                 date: new Date()
             }
             paletteButtonFavoriteNode.style.background = colorsArray[1];
+            paletteButtonFavoriteNode.style.border = `1px solid ${colorsArray[1]}`;
+
             paletteButtonFavoriteIconNode.style.color = "#fff";
             paletteButtonFavoriteIconNode.classList.remove("far");
             paletteButtonFavoriteIconNode.classList.add("fas");
@@ -112,6 +116,8 @@ function PaletteCardWrapper(colorsArray, id) {
 
     if (isSaved) {
         paletteButtonFavoriteNode.style.background = colorsArray[1];
+        paletteButtonFavoriteNode.style.border = `1px solid ${colorsArray[1]}`;
+
         paletteButtonFavoriteIconNode.style.color = "#fff";
         paletteButtonFavoriteIconNode.classList.remove("far");
         paletteButtonFavoriteIconNode.classList.add("fas");
