@@ -38,7 +38,8 @@
     "@babel/polyfill": "^7.7.0",
     "core-js": "3",
     "embla-carousel": "^2.8.1",
-    "hammerjs": "^2.0.8"
+    "hammerjs": "^2.0.8",
+    "siema": "^1.5.1"
   },
   "browserslist": [
     "> 1%",

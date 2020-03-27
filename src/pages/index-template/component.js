@@ -1,10 +1,13 @@
 import Layout from "../../components/index/Layout"
+
+import { removeAllChildsOf } from "../../scripts/utils";
+
 import PaletteCardWrapper from "../../components/index/PaletteCardWrapper";
 
 const index = function (...args) {
     const root = document.getElementById("root");
 
-    root.innerHTML = "";
+    removeAllChildsOf(root);
 
     const instance = {
         paletteArray: [],
@@ -20,7 +23,7 @@ const index = function (...args) {
         paletteContainerNode: null,
 
         init: function (customChildrenNode = false) {
-            root.innerHTML = "";
+            removeAllChildsOf(root);
 
             let children = null;
 

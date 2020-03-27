@@ -1,9 +1,11 @@
 import color from "./component";
 
+import { removeAllChildsOf } from "../../scripts/utils";
+
 const ColorPage = {
     render: () => {
         const root = document.getElementById("root");
-        root.innerHTML = "";
+        removeAllChildsOf(root);
         root.innerHTML = color();
     }
 }
