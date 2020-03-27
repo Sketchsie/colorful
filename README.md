@@ -4,13 +4,15 @@
   <p align="center">Infinite color palettes, save it or copy any of its colors, enjoy</p>
 </p>
 
-
-<ul>
-  <li>
-    <a href="https://github.com/LaksCastro/colorful/edit/master/README-ptbr.md">Leia esta página em português</a>
-  </li>
+<p>
+  <img src="./src/assets/pt-br.png" alt="Portuguese" height="16">
+  <a href="https://github.com/LaksCastro/colorful/edit/master/README-ptbr.md">Leia esta página em português</a>
 </p>
-  
+
+## How To Use
+Its very simples, open [Colorful Website - Ainda sem Link](https://)
+
+
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
