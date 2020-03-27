@@ -54,3 +54,14 @@
 .nav-tab-color-icon{
     flex: 1;
 }
+
+@media screen and (max-width: 376px){
+    #nav-tab-container{
+        
+        padding: 1rem 0;
+    }
+    .nav-tab-item-container{
+        min-width: 120px;
+        flex: 0 0 100%;
+    }
+}

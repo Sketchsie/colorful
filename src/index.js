@@ -3,6 +3,7 @@ import "./styles/style.scss"
 // Router
 import Router from "./routes"
 
+import "./scripts/customPrototypes"
 
 // Local Storage To Storage Palette's
 import initLocalStorage from "./scripts/useLocalStorage";
@@ -16,8 +17,6 @@ import Dark from "./pages/dark"
 import Page404 from "./pages/page404"
 import MyPalettes from "./pages/my"
 import Color from "./pages/color"
-
-import "./scripts/customPrototypes"
 
 document.addEventListener('DOMContentLoaded', () => {
     const routes = Router();

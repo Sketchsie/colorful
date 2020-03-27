@@ -1,7 +1,7 @@
 import Layout from "../../components/index/Layout"
 import PaletteCardWrapper from "../../components/index/PaletteCardWrapper";
 
-const index = function () {
+const index = function (...args) {
     const root = document.getElementById("root");
 
     root.innerHTML = "";
@@ -19,15 +19,22 @@ const index = function () {
         paletteWrapperNode: null,
         paletteContainerNode: null,
 
-        init: function () {
+        init: function (customChildrenNode = false) {
             root.innerHTML = "";
 
-            this.paletteWrapperNode = this.paletteWrapper.stringToHTML();
-            this.paletteContainerNode = this.paletteContainer.stringToHTML();
+            let children = null;
 
-            this.paletteWrapperNode.appendChild(this.paletteContainerNode);
+            if (customChildrenNode) {
+                children = customChildrenNode;
+            } else {
+                this.paletteWrapperNode = this.paletteWrapper.stringToHTML();
+                this.paletteContainerNode = this.paletteContainer.stringToHTML();
 
-            const contentNodes = Layout(() => this.paletteWrapperNode);
+                this.paletteWrapperNode.appendChild(this.paletteContainerNode);
+                children = this.paletteWrapperNode;
+            }
+
+            const contentNodes = Layout(() => children);
 
             contentNodes.forEach((content, i) => {
                 const nodeElement = content();
@@ -56,7 +63,7 @@ const index = function () {
             this.paletteContainerNode.appendChild(paletteCardWrapper);
         }
     };
-    instance.init.call(instance);
+    instance.init.apply(instance, [...args]);
 
     return instance;
 }

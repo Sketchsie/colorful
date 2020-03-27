@@ -1,4 +1,19 @@
-#no-pallete-wrapper{
-    background: red;
-    padding: 4rem;
+#no-palette-wrapper{
+    padding: 2rem 0.5rem;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    img{
+        width: 100%;
+        max-width: 350px;
+        margin-bottom: 2rem;
+    }
+    h1{
+        font-size: 1.3em;
+        padding: 0.3rem 0;
+        color: var(--color-light);
+    }
 }

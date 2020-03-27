@@ -78,3 +78,14 @@
 i.fa-heart{
     transition: all .3s ease-in-out;
 }
+
+@media screen and (max-width: 680px){
+    #palette-container{
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-gap: 0.3rem;
+        padding: 1rem;
+    }
+    .p-item-buttons-wrappers{
+        grid-gap: 0.5rem;
+    }
+}

@@ -46,3 +46,15 @@
         margin-right: 12px;
     }
 }
+@media screen and (max-width: 492px){
+    #nav-icons-wrapper{
+        display: none;
+    }
+}
+@media screen and (max-width: 310px){
+    #nav-logo-wrapper{
+        h1{
+            display: none;
+        }
+    }
+}

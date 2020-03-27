@@ -39,10 +39,15 @@ const IndexTemplatePage = {
 
     currentRenderIndex: 0,
 
-    render: function (functionToGenerateColors, useFixePalettes = false, renderPalette = false) {
+    render: function (functionToGenerateColors, useFixePalettes = false, renderPalette = false, children = undefined, loadMore = false) {
         this.clearEventListeners();
 
-        this.index = index();
+        if (loadMore)
+            this.loadMore = loadMore.bind(this);
+        else
+            this.loadMore = defaultLoadMore.bind(this);
+
+        this.index = index(children);
 
         if (renderPalette) this.renderPalette = renderPalette.bind(this);
         else this.renderPalette = defaultRenderPalette.bind(this);
@@ -50,7 +55,7 @@ const IndexTemplatePage = {
         if (useFixePalettes) return this.renderFixedPalettes(useFixePalettes);
 
         this.generatePalette = functionToGenerateColors
-        this.loadMore = defaultLoadMore.bind(this);
+
         this.init();
     },
 
