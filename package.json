@@ -1,8 +1,8 @@
 {
-  "name": "webpack-4-boilerplate",
+  "name": "colorful",
   "version": "1.0.0",
-  "description": "Boilerplate for modern javascript development using webpack 4",
-  "author": "Fin Mavis",
+  "description": "Infinite color palettes, save it or copy any of its colors, enjoy",
+  "author": "Laks Castro",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.7.7",
@@ -32,12 +32,14 @@
   },
   "scripts": {
     "start": "webpack-dev-server --open --config=config/webpack.dev.js",
-    "build": "webpack --config=config/webpack.prod.js"
+    "build": "webpack --config=config/webpack.prod.js",
+    "publish": "node publish.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
     "core-js": "3",
     "embla-carousel": "^2.8.1",
+    "gh-pages": "^2.2.0",
     "hammerjs": "^2.0.8",
     "siema": "^1.5.1"
   },
