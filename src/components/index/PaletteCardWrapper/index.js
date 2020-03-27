@@ -6,7 +6,21 @@ import { useLocalStorage } from "../../../scripts/useLocalStorage";
 
 import { generateRandomNumber, createUniqueId } from "../../../scripts/utils";
 
-import PaletteCard from "../PaletteCard";
+function getLinearGradient(colors) {
+    return `
+        background: linear-gradient(to bottom, 
+            ${colors[0]} 30%, 
+            ${colors[1]} 30%, 
+            ${colors[1]} 55%, 
+            ${colors[2]} 55%, 
+            ${colors[2]} 75%,
+            ${colors[3]} 75%, 
+            ${colors[3]} 90%,
+            ${colors[4]} 90%, 
+            ${colors[4]} 100%
+        );
+    `
+}
 
 function PaletteCardWrapper(colorsArray, id) {
 
@@ -61,7 +75,7 @@ function PaletteCardWrapper(colorsArray, id) {
         <div class="p-item-buttons-wrappers"></div>
     `
     const paletteContainerColorsString = `
-        <div class="p-item-colors-wrapper" data-appear="${dataAppear}"></div>
+        <div style="${getLinearGradient(colorsArray)}" class="p-item-colors-wrapper" data-appear="${dataAppear}"></div>
     `
 
     const paletteButtonFavoriteNode = paletteButtonFavoriteString.stringToHTML();
@@ -85,9 +99,9 @@ function PaletteCardWrapper(colorsArray, id) {
 
     paletteButtonNode.appendChild(paletteButtonPreviewNode);
 
-    colorsArray.forEach(color => {
-        paletteContainerColorsNode.appendChild(PaletteCard(color));
-    });
+    // colorsArray.forEach(color => {
+    //     paletteContainerColorsNode.appendChild(PaletteCard(color));
+    // });
 
     paletteNode.appendChild(paletteContainerColorsNode);
     paletteNode.appendChild(paletteButtonNode);

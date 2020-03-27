@@ -38,6 +38,7 @@ const MyPalettesPage = {
         console.log("my palette page");
 
         palettes = useLocalStorage().getPalettes();
+        palettes.reverse();
 
         if (!palettes.length) {
             IndexTemplate.render(undefined, undefined, undefined, noPalettesNode, () => { });
@@ -45,7 +46,6 @@ const MyPalettesPage = {
             if (palettes.length <= 20) {
                 IndexTemplate.render(undefined, useLocalStorage().getPalettes());
             } else {
-                console.log(palettes.length);
                 IndexTemplate.render(undefined, undefined, renderPalette);
             }
         }
