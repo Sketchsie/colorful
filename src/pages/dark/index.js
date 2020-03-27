@@ -42,7 +42,6 @@ function generatePalette() {
 
 const DarkPage = {
     render: function () {
-        console.log("voce esta na dark");
         IndexTemplate.render(generatePalette);
     }
 }

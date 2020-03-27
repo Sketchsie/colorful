@@ -38,7 +38,6 @@ function generatePalette() {
 
 const IndexPage = {
     render: function () {
-        console.log("voce esta na random");
         IndexTemplate.render(generatePalette);
     }
 }

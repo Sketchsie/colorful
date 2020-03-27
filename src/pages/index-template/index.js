@@ -107,7 +107,6 @@ const IndexTemplatePage = {
     infiniteScrollFunction: null,
     setInfiniteScrollFunction: function () {
         this.infiniteScrollFunction = debounce(function () {
-            console.log("huehuh");
             const value = parseInt(100 * this.doc.scrollTop / (this.doc.scrollHeight - this.doc.clientHeight))
             if (value >= 50)
                 this.loadMore();

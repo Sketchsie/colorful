@@ -29,14 +29,11 @@ function renderPalette() {
         paletteArray.id
     );
 
-    console.log("renderizei num: " + this.currentRenderIndex);
     this.currentRenderIndex++;
 }
 
 const MyPalettesPage = {
     render: function () {
-        console.log("my palette page");
-
         palettes = useLocalStorage().getPalettes();
         palettes.reverse();
 
