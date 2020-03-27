@@ -30,6 +30,10 @@ const tabs = [{
     name: "Tips",
     icons: ["#2c1026", "#4c666f", "#57c09a", "#b6f8d6"],
     path: "/tips"
+}, {
+    name: "About Project",
+    icons: ["#613125", "#A54348", "#F46E55", "#FF9D74"],
+    path: "/about"
 }]
 
 
