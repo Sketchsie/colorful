@@ -1,11 +1,13 @@
 import IndexTemplate from "../index-template"
 
-import { useLocalStorage } from "../../scripts/useLocalStorage";
+import { useLocalStorage } from "../../scripts/useLocalStorage"
 
-const IndexPage = {
+const MyPalettesPage = {
     render: function () {
-        console.log("a");
+        console.log("voce esta na my palettes");
+        console.log(useLocalStorage().getPalettes())
+        IndexTemplate.render(undefined, useLocalStorage().getPalettes());
     }
 }
 
-export default IndexPage;
+export default MyPalettesPage;

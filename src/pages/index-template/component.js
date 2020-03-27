@@ -48,12 +48,11 @@ const index = function () {
                 }
             });
         },
-        addPalette: function (colorsArray) {
-
+        addPalette: function (colorsArray, id = false) {
             this.paletteArray.push(colorsArray);
 
             const palette = colorsArray.hex;
-            const paletteCardWrapper = PaletteCardWrapper(palette);
+            const paletteCardWrapper = PaletteCardWrapper(palette, id);
             this.paletteContainerNode.appendChild(paletteCardWrapper);
         }
     };

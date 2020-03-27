@@ -8,7 +8,9 @@ import { generateRandomNumber, createUniqueId } from "../../../scripts/utils";
 
 import PaletteCard from "../PaletteCard";
 
-function PaletteCardWrapper(colorsArray) {
+function PaletteCardWrapper(colorsArray, id) {
+
+    const isSaved = !!id;
 
     function toggleFavoritePalette() {
 
@@ -48,7 +50,7 @@ function PaletteCardWrapper(colorsArray) {
         <i class="far fa-heart"></i>
     `
     const paletteButtonFavoriteString = `
-        <button palette-id="${createUniqueId()}" class="p-item-button"></button>
+        <button palette-id="${isSaved ? id : createUniqueId()}" class="p-item-button"></button>
     `
     const paletteButtonPreviewString = `
         <button class="p-item-button">
@@ -98,6 +100,12 @@ function PaletteCardWrapper(colorsArray) {
     paletteNodeHammer.on("tap", () => console.log("Do anything on click..."));
     paletteNodeHammer.on("press", () => window.__openInterfacePreview(colorsArray));
 
+    if (isSaved) {
+        paletteButtonFavoriteNode.style.background = colorsArray[1];
+        paletteButtonFavoriteIconNode.style.color = "#fff";
+        paletteButtonFavoriteIconNode.classList.remove("far");
+        paletteButtonFavoriteIconNode.classList.add("fas");
+    }
     return paletteNode;
 }
 

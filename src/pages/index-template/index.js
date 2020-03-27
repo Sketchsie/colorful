@@ -10,10 +10,28 @@ const IndexTemplatePage = {
     generatePalette: null,
     doc: document.documentElement,
 
-    render: function (functionToGenerateColors) {
-        this.generatePalette = functionToGenerateColors,
-            this.index = index();
+    render: function (functionToGenerateColors, useFixePalettes = false) {
+        this.index = index();
+
+        if (useFixePalettes) return this.renderFixedPalettes(useFixePalettes);
+
+        this.generatePalette = functionToGenerateColors
         this.init();
+    },
+    renderFixedPalettes: function (palettesArrayWithID) {
+        palettesArrayWithID.reverse();
+        palettesArrayWithID.forEach(palette => {
+            this.index.addPalette(
+                {
+                    hex: palette.colors,
+                },
+                palette.id
+            );
+        });
+        if (this.scrollToAppearFunction) window.removeEventListener("scroll", this.scrollToAppearFunction);
+        if (this.infiniteScrollFunction) window.removeEventListener("scroll", this.infiniteScrollFunction);
+
+        this.scrollToAppear();
     },
     init: function () {
         this.loadMore(this);
@@ -25,7 +43,9 @@ const IndexTemplatePage = {
             this.renderPalette();
         }
     },
-    scrollToAppear: function () {
+
+    scrollToAppearFunction: null,
+    setScrollToAppearFunction: function () {
         function inView(node) {
             const sb = this.doc.getBoundingClientRect();
             const eb = node.getBoundingClientRect();
@@ -37,15 +57,25 @@ const IndexTemplatePage = {
                     palette.setAttribute("data-appear", "visible");
             }
         }
-        window.addEventListener("scroll", debounce(updateInView.bind(this)));
         updateInView.call(this);
+        this.scrollToAppearFunction = debounce(updateInView.bind(this))
     },
-    infiniteScroll: function () {
-        window.addEventListener("scroll", debounce(function () {
+    scrollToAppear: function () {
+        this.setScrollToAppearFunction();
+        window.addEventListener("scroll", this.scrollToAppearFunction);
+    },
+
+    infiniteScrollFunction: null,
+    setInfiniteScrollFunction: function () {
+        this.infiniteScrollFunction = debounce(function () {
             const value = parseInt(100 * this.doc.scrollTop / (this.doc.scrollHeight - this.doc.clientHeight))
             if (value >= 50)
                 this.loadMore();
-        }.bind(this)));
+        }.bind(this));
+    },
+    infiniteScroll: function () {
+        this.setInfiniteScrollFunction();
+        window.addEventListener("scroll", this.infiniteScrollFunction);
     },
     renderPalette: function () {
         const {
@@ -62,14 +92,8 @@ const IndexTemplatePage = {
                     "#" + fullColorHex(baseSemiDark.color.r, baseSemiDark.color.g, baseSemiDark.color.b),
                     "#" + fullColorHex(base.color.r, base.color.g, base.color.b),
                     "#" + fullColorHex(baseSemiLight.color.r, baseSemiLight.color.g, baseSemiLight.color.b),
-                    "#" + fullColorHex(baseLight.color.r, baseLight.color.g, baseLight.color.b)],
-                rgb: [
-                    baseDark.string,
-                    baseSemiDark.string,
-                    base.string,
-                    baseSemiLight.string,
-                    baseLight.string,
-                ]
+                    "#" + fullColorHex(baseLight.color.r, baseLight.color.g, baseLight.color.b)
+                ],
             }
         );
     }

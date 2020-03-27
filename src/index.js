@@ -14,6 +14,7 @@ import Redirect from "./scripts/redirectTo";
 import Index from "./pages/index"
 import Dark from "./pages/dark"
 import Page404 from "./pages/page404"
+import MyPalettes from "./pages/my"
 import Color from "./pages/color"
 
 import "./scripts/customPrototypes"
@@ -21,11 +22,16 @@ import "./scripts/customPrototypes"
 document.addEventListener('DOMContentLoaded', () => {
     const routes = Router();
 
+    initLocalStorage();
+
     routes.get("/", () => {
         Index.render();
     });
     routes.get("/dark", () => {
         Dark.render();
+    });
+    routes.get("/my", () => {
+        MyPalettes.render();
     });
     routes.get("*", () => {
         Page404.render();
@@ -34,5 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
     Redirect(routes);
 
     routes.init();
-    initLocalStorage();
 });
