@@ -6,43 +6,40 @@
 </p>
 
 <p>
-  <img src="./src/assets/pt-br.png" alt="Portuguese" height="16">
-  <a href="https://github.com/LaksCastro/colorful/edit/master/README.md">Leia essa page em ingles</a>
+  <img src="./src/assets/en.png" alt="Portuguese" height="16">
+  <a href="https://github.com/LaksCastro/colorful/blob/master/README.md">Read in English</a>
 </p>
 
 ## Como utilizar
+É muito simples, abra [Site da Colorful](https://lakscastro.github.io/colorful/) e navegue entre as infinitas paletas, gostou de alguma? Basta clicar no coração, que ela estará salva na sua sessão do navegador, e para acessa-la basta ir até a guia "My Palette's', todas elas estarão lá :)
 
-È muito simples, abra [Site da Colorful](https://lakscastro.github.io/colorful/) e Navegue :)
-
-## Começando
-
+## Curioso pelo Código?
 Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste. Consulte implantação para obter notas sobre como implantar o projeto em um sistema ativo.
 
 ### Requisitos
-
-Coisas que você precisa para instalar o software e como instalar ele.
-
-```
-Dando exemplos
-```
+- Node instalado
+- Npm ou Yarn instalado
 
 ### Instalando
-
-Uma série de exemplos passo a passo que mostram como obter um ambiente de desenvolvimento em execução
-
-Fale qual o passo vamos dar
-
+1. Clone o repositório usando o cliente do Github de sua preferência, ou faça o download do repositório
+Via linha de comando:  
 ```
-De o exemplo
+git clone https://github.com/LaksCastro/colorful.git
 ```
 
-E repita
-
+2. Instale as dependências:  
 ```
-ate terminar
+npm install || yarn install
 ```
 
-Termine com um exemplo de como retirar alguns dados do sistema ou usá-los para uma pequena demonstração
+3. Crie seu seu arquivo .env.dev e coloque a rota que estamos trabalhando como `PATH_BASE=/`, pois o Webpack Dev Server utiliza o servidor local com este endereço http://localhost:3000/
+```
+.env.dev
+
+BASE_PATH=/
+```
+
+Faça o mesmo para o .env.prod se for usar este projeto em produção, porém agora coloque o nome da rota relativa ao seu servidor, no caso deste repositório, `BASE_PATH=/colorful`
 
 ## Rode o teste
 
