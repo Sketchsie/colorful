@@ -90,7 +90,6 @@ function NavTabs() {
     const navContainerNode = navContainerString.stringToHTML();
 
     const navContainerHammer = new Hammer(navContainerNode);
-    navContainerHammer.on("swiperight", closeDrawer);
 
     const navFooterNode = navFooterString.stringToHTML();
 
