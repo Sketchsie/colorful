@@ -10,7 +10,7 @@
 </p>
 
 ## How To Use
-Its very simples, open [Colorful Website - Ainda sem Link](https://)
+Its very simples, open [Colorful Website](https://lakscastro.github.io/colorful/) and Browser :)
 
 
 ## Getting Started
