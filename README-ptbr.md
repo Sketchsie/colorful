@@ -4,15 +4,18 @@
   <p align="center">Infinitas paletas geradas por Scripts, salve elas ou copie uma de suas cores</p>
 </p>
 
+<iframe src="https://google.com.br/"></iframe>
+
 <p>
   <img src="./src/assets/en.png" alt="Portuguese" height="16">
   <a href="https://github.com/LaksCastro/colorful/blob/master/README.md">Read in English</a>
 </p>
 
-<iframe src="https://google.com.br/"></iframe>
-
 ## Como utilizar
-É muito simples, abra [Site da Colorful](https://lakscastro.github.io/colorful/) e navegue entre as infinitas paletas, gostou de alguma? Basta clicar no coração, que ela estará salva na sua sessão do navegador, e para acessa-la basta ir até a guia "My Palette's', todas elas estarão lá :) Há tema Dark e Light, use o que te preferir, para alternar entre eles, basta clicar no pequeno botão no canto inferior esquerdo com ícone de pincel.
+É simples, abra [Site da Colorful](https://lakscastro.github.io/colorful/) e navegue entre as infinitas paletas, gostou de alguma? Basta clicar no coração, que ela estará salva na sua sessão do navegador, e para acessa-la basta ir até a guia "My Palette's', todas elas estarão lá :) Há tema Dark e Light, use o que te preferir, para alternar entre eles, basta clicar no pequeno botão no canto inferior esquerdo com ícone de pincel.
+
+## Objetivo do projeto
+Aprender a criar rotas e manipular o DOM via JavaScript e a configurar utilizar o Webpack e Babel para que a aplicação seja divida em módulos e compatível com a maioria dos navegadores, tudo sem utilizar nenhuma biblioteca ou framework JavaScript como React ou Vue
 
 ## Quer ler um pouco de código?
 Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste. Consulte implantação para obter notas sobre como implantar o projeto em um sistema ativo.
