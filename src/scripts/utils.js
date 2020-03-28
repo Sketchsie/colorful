@@ -154,6 +154,9 @@ function getLiquidRoute(newPathname) {
     return liquidPathname;
 }
 
+function getValidRgbValue(value) {
+    return value > 255 ? 255 : value;
+}
 export {
     generateRandomNumber,
     generateRandomColor,
@@ -165,5 +168,6 @@ export {
     debounce,
     createUniqueId,
     removeAllChildsOf,
-    getLiquidRoute
+    getLiquidRoute,
+    getValidRgbValue
 }

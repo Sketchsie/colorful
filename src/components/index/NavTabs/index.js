@@ -89,8 +89,8 @@ function NavTabs() {
 
     const navContainerNode = navContainerString.stringToHTML();
 
-    const navContainerHammer = new Hammer(navContainerNode);
-
+    const navSpanHammer = new Hammer(navSpanCloseNode);
+    navSpanHammer.on("swiperight", toggleDrawer);
     const navFooterNode = navFooterString.stringToHTML();
 
     navWrapperNode.appendChild(navSpanCloseNode);

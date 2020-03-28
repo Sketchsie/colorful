@@ -1,6 +1,7 @@
 import IndexTemplate from "../index-template"
 
-import { generateRandomColor } from "../../scripts/utils";
+
+import { generateRandomColor, getValidRgbValue } from "../../scripts/utils";
 
 function generatePalette() {
     const base = generateRandomColor();
@@ -24,9 +25,7 @@ function generatePalette() {
         g: [getValidRgbValue(base.color.g + 30), 255],
         b: [getValidRgbValue(base.color.b + 30), 255],
     });
-    function getValidRgbValue(value) {
-        return value > 255 ? 255 : value;
-    }
+
     return {
         baseDark,
         baseSemiDark,
