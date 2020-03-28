@@ -55,7 +55,7 @@ Faça o mesmo para o .env.prod se for usar este projeto em produção, porém ag
 npm run start || yarn start
 ```
 
-5. Parar fazer a Build: 
+5. Para fazer a Build: 
 ```
 npm run build || yarn build
 ```
