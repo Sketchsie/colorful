@@ -91,7 +91,7 @@ img{
   bottom: 12px;
   left: 50%;
   
-  background: var(--content-hovered);
+  background: var(--content);
   
   will-change: opacity, transform;
 
@@ -105,6 +105,8 @@ img{
   
   animation: toast-animation 1s ease-in-out 0s 1 alternate;
   animation-fill-mode: forwards;
+
+  box-shadow: var(--box-shadow-light);
 }
 @keyframes toast-animation {
   0%{
