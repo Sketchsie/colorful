@@ -14,6 +14,7 @@ import Redirect from "./scripts/redirectTo";
 // Pages
 import Index from "./pages/index"
 import Dark from "./pages/dark"
+import Light from "./pages/light"
 import Page404 from "./pages/page404"
 import MyPalettes from "./pages/my"
 
@@ -27,6 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     routes.get("/dark", () => {
         Dark.render();
+    });
+    routes.get("/light", () => {
+        Light.render();
     });
     routes.get("/my", () => {
         MyPalettes.render();
