@@ -33,8 +33,7 @@
   },
   "scripts": {
     "start": "webpack-dev-server --open --config=config/webpack.dev.js",
-    "build": "webpack --config=config/webpack.prod.js",
-    "update": "node publish.js"
+    "build": "webpack --config=config/webpack.prod.js && node publish.js",
   },
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
