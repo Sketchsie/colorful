@@ -8,9 +8,12 @@ import { useLocalStorage } from "../../scripts/useLocalStorage"
 
 let palettes = null;
 
+
+
 const noPalettesString = `
     <div id="no-palette-wrapper">
-        <img src="/assets/void.svg" />
+        <img src="${process.env.PATH_BASE === "/" ?
+        "/assets/void.svg" : `${process.env.PATH_BASE}/assets/void.svg`}" />
         <h1>The beautiful palettes you save will appear here</h1>
         <h1>As belas paletas que você salvar aparecerão aqui</h1>
     </div>

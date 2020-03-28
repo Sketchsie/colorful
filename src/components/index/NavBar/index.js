@@ -5,7 +5,10 @@ const NavBar = function () {
         <nav id="nav-wrapper">
             <nav id="nav-container">
                 <div id="nav-logo-wrapper">
-                    <img src="/assets/logo.png" height="60" alt="Logo">
+                    <img 
+                        src="${process.env.PATH_BASE === "/" ? "/assets/logo.png" : `${process.env.PATH_BASE}/assets/logo.png`}" 
+                            height="60" alt="Logo"
+                        >
                     <h1>Colorful</h1>
                 </div>
                 <div id="nav-icons-wrapper">
