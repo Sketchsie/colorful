@@ -1,3 +1,9 @@
+<h1>
+  <blockquote>
+    <em>IN DEVELOPMENT</em>
+  </blockquote>
+</h1>
+
 <p align="center">
   <img src="./src/assets/images/logo.png" width="150">
   <h1 align="center">Colorful</h1>
