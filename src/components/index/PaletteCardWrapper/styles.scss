@@ -15,7 +15,7 @@
     
     max-width: 1450px;
     padding: 2rem 1rem;
-    padding-bottom: 154px 1rem;
+    padding-bottom: 154px;
 }
 .p-item-container{
     height: 350px;
@@ -80,6 +80,7 @@ i.fa-heart{
     #palette-container{
         grid-template-columns: 1fr 1fr 1fr;
         padding: 1rem;
+        padding-bottom: 154px;
     }
 }
 @media screen and (min-width: 854px){
