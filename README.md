@@ -9,11 +9,11 @@
   <a href="https://github.com/LaksCastro/colorful/blob/master/README.md">Read in English</a>
 </p>
 
-## Como utilizar
-É simples, abra [Site da Colorful](https://lakscastro.github.io/colorful/) e navegue entre as infinitas paletas, gostou de alguma? Basta clicar no coração, que ela estará salva na sua sessão do navegador, e para acessa-la basta ir até a guia "My Palette's', todas elas estarão lá :) Há tema Dark e Light, use o que te preferir, para alternar entre eles, basta clicar no pequeno botão no canto inferior esquerdo com ícone de pincel.
+## How to use
+Is very simple, open [Colorful Website](https://lakscastro.github.io/colorful/) and browse between infinite color palettes, liked any? Just click on heart button that she will be saved in browser storage,  and for see your saved palettes click on hamburger menu and click in "My Palette's" button, all of these will appear there :) Dark and light theme supported, to toggle click on button in bottom left.
 
-## Objetivo do projeto
-Aprender a criar rotas e manipular o DOM via JavaScript e a configurar utilizar o Webpack e Babel para que a aplicação seja divida em módulos e compatível com a maioria dos navegadores, tudo sem utilizar nenhuma biblioteca ou framework JavaScript como React ou Vue
+## Project's Goal
+Learn to work with Vanilla Js: Routes, DOM manipulation, all together with Webpack 4 and Babel for the app divided into modules and compatible with most browsers
 
 <p align="center">
   <img width="450" src="./src/assets/print/print-1.png">
