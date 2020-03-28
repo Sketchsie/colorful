@@ -82,6 +82,11 @@ module.exports = {
             filename: "index.html",
             favicon: "./src/assets/images/logo.png"
         }),
+        new HtmlWebpackPlugin({
+            template: "./src/404.html",
+            filename: "404.html",
+            favicon: "./src/assets/images/logo.png"
+        }),
         new Dotenv({
             path: './.env.prod', // Path to .env file (this is the default)
         })

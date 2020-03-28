@@ -1,7 +1,5 @@
 import "./styles/style.scss"
 
-import "./github-config/.gh-pages.yml";
-
 // Router
 import Router from "./routes"
 
@@ -18,7 +16,6 @@ import Index from "./pages/index"
 import Dark from "./pages/dark"
 import Page404 from "./pages/page404"
 import MyPalettes from "./pages/my"
-import Color from "./pages/color"
 
 document.addEventListener('DOMContentLoaded', () => {
     const routes = Router();
