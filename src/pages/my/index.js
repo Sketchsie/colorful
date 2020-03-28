@@ -8,8 +8,6 @@ import { useLocalStorage } from "../../scripts/useLocalStorage"
 
 let palettes = null;
 
-
-
 const noPalettesString = `
     <div id="no-palette-wrapper">
         <img src="${process.env.PATH_BASE === "/" ?
