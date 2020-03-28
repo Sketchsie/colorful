@@ -72,7 +72,7 @@ module.exports = {
             favicon: "./src/assets/images/logo.png"
         }),
         new Dotenv({
-            path: './.env', // Path to .env file (this is the default)
+            path: './.env.prod', // Path to .env file (this is the default)
         })
     ]
 };
