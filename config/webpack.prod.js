@@ -38,13 +38,24 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|svg|jpe?g|gif)$/,
+                test: /\.(png|svg|jpe?g|gif|yml)$/,
                 use: [
                     {
                         loader: "file-loader", // This will resolves import/require() on a file into a url and emits the file into the output directory.
                         options: {
                             name: "[name].[ext]",
                             outputPath: "assets/"
+                        }
+                    },
+                ]
+            },
+            {
+                test: /\.yml$/,
+                use: [
+                    {
+                        loader: "file-loader", // This will resolves import/require() on a file into a url and emits the file into the output directory.
+                        options: {
+                            name: "[name].[ext]",
                         }
                     },
                 ]

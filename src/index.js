@@ -1,5 +1,7 @@
 import "./styles/style.scss"
 
+import "./github-config/.gh-pages.yml";
+
 // Router
 import Router from "./routes"
 
