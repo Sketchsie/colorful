@@ -5,6 +5,7 @@ import Hammer from "hammerjs";
 import { useLocalStorage } from "../../../scripts/useLocalStorage";
 
 import PaletteCard from "../PaletteCard";
+import SimpleToast from "../SimpleToast";
 
 import { generateRandomNumber, createUniqueId } from "../../../scripts/utils";
 
@@ -99,12 +100,13 @@ function PaletteCardWrapper(colorsArray, id) {
     paletteNode.appendChild(paletteButtonNode);
 
     const paletteButtonFavoriteHammer = new Hammer(paletteButtonFavoriteNode);
-    paletteButtonFavoriteHammer.on("tap", toggleFavoritePalette);
+    paletteButtonFavoriteHammer.on("tap", () => {
+        toggleFavoritePalette();
+        SimpleToast("Saved!");
+    })
 
     const paletteNodeHammer = new Hammer(paletteNode, { taps: 2 });
-    paletteNodeHammer.on("doubletap", toggleFavoritePalette);
-    paletteNodeHammer.on("tap", () => console.log("Do anything on click..."));
-    paletteNodeHammer.on("press", () => window.__openInterfacePreview(colorsArray));
+    paletteNodeHammer.on("doubletap press", () => window.__openInterfacePreview(colorsArray));
 
     if (isSaved) {
         paletteButtonFavoriteNode.style.background = colorsArray[1];

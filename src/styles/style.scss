@@ -86,3 +86,41 @@ img{
   opacity: 1;
   transform: translateX(0);
 }
+#toast-wrapper{
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  
+  background: var(--content-hovered);
+  
+  will-change: opacity, transform;
+
+  padding: 4px 12px;
+
+  color: var(--color);
+
+  border-radius: 36px;
+
+  transition: all .3s ease-in-out;
+  
+  animation: toast-animation 1s ease-in-out 0s 1 alternate;
+  animation-fill-mode: forwards;
+}
+@keyframes toast-animation {
+  0%{
+    opacity: 0;
+    transform: translate(-50%, -12px);
+  }
+  30%{
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  90%{
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100%{
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+}

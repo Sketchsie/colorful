@@ -1,5 +1,6 @@
 import "./styles.scss";
-
+import Hammer from "hammerjs";
+import SimpleToast from "../SimpleToast"
 import { copyToClipboard } from "../../../scripts/utils"
 
 function PaletteCard(color) {
@@ -12,7 +13,11 @@ function PaletteCard(color) {
     `
     const paletteNode = paletteString.stringToHTML();
 
-    colorNode.onclick = () => copyToClipboard(color);
+    const colorHammer = new Hammer(colorNode);
+    colorHammer.on("tap", () => {
+        copyToClipboard(color);
+        SimpleToast("Copied to clipboard!");
+    });
 
     paletteNode.appendChild(colorNode);
 
