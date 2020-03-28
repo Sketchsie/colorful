@@ -37,7 +37,6 @@
     background: var(--content-hovered);
     padding: 2rem;
     img{
-        height: 100%;
         max-height: 75px;
         max-width: 100%;
     }
@@ -152,6 +151,27 @@
             transform: translateX(100%);
             opacity: 0;
             visibility: hidden;
+        }
+    }
+}
+
+@media screen and (max-width: 680px){
+    #nav-tab-container{
+        max-width: 300px;
+    }
+}
+@media screen and (max-width: 302px){
+    #nav-icons-wrapper{
+        p{
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 498px){
+    #nav-header-wrapper{
+        padding: 1rem;
+        img{
+            max-height: 50px;
         }
     }
 }

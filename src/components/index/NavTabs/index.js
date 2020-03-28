@@ -33,7 +33,9 @@ function NavTabItem(name, firstColor, secondColor, path) {
 
     const navTabNode = navTabString.stringToHTML();
 
-    navTabNode.onclick = () => redirect(path);
+    const navTabHammer = new Hammer(navTabNode);
+    navTabHammer.on("tap", () => redirect(path));
+
     return navTabNode;
 }
 
@@ -89,8 +91,12 @@ function NavTabs() {
 
     const navContainerNode = navContainerString.stringToHTML();
 
+    const navContainerHammer = new Hammer(navContainerNode);
+    navContainerHammer.on("swiperight", closeDrawer);
+
     const navSpanHammer = new Hammer(navSpanCloseNode);
-    navSpanHammer.on("swiperight", toggleDrawer);
+    navSpanHammer.on("swiperight", closeDrawer);
+
     const navFooterNode = navFooterString.stringToHTML();
 
     navWrapperNode.appendChild(navSpanCloseNode);
