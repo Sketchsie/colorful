@@ -1,4 +1,3 @@
-
 <p align="center">
   <img src="./src/assets/images/logo.png" width="150">
   <h1 align="center">Colorful</h1>
@@ -34,42 +33,27 @@ npm install || yarn install
 
 3. Crie seu seu arquivo .env.dev e coloque a rota que estamos trabalhando como `PATH_BASE=/`, pois o Webpack Dev Server utiliza o servidor local com este endereço http://localhost:3000/
 ```
-.env.dev
+# .env.dev
 
 BASE_PATH=/
 ```
 
 Faça o mesmo para o .env.prod se for usar este projeto em produção, porém agora coloque o nome da rota relativa ao seu servidor, no caso deste repositório, `BASE_PATH=/colorful`
 
-## Rode o teste
-
-Explique como faz para rodar o teste automatico para esse sistema
-
-### Duvida em testes de ponta a ponta
-
-Explique como esses testes testam e porque.
-
+4. Inicie o Webpack Dev Server:
 ```
-De um exemplo
+npm run start || yarn start
 ```
 
-### E codefique o estilo de teste.
-
-Explique como esses testes testam e porque.
-
+5. Parar fazer a Build: 
 ```
-De um exemplo
+npm run build || yarn build
 ```
 
-## Desenvolvimento
-
-Adicione notas adicionais sobre como implantar isso em um sistema ativo
-
-## Construido com
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - O web framework usado.
-* [Maven](https://maven.apache.org/) - Gerenciamento de dependencias.
-* [ROME](https://rometools.github.io/rome/) - Usado para gerar RSS Feeds
+## Construido com  
+* [Webpack 4](https://webpack.js.org/) - Module Bundler.
+* [Babel](https://babeljs.io/) - Transpilador JavaScript.
+* [JavaScript](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript) - A linguagem utilizada
 
 ## Contribuição
 
@@ -80,17 +64,10 @@ Por favor leia [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b2467940295
 Nos utilizamos [SemVer](http://semver.org/) para versionamento. Para as versões disponiveis, veja as [tags nesse repositorio](https://github.com/your/project/tags). 
 
 ## Autores
+* [Laks Castro](https://github.com/LaksCastro)
 
-* **Billie Thompson** - *Trabalho inicial* - [PurpleBooth](https://github.com/PurpleBooth)
-
-Veja tambem a lista de [contribuidores](https://github.com/your/project/contributors) que participou no projeto.
+## Contribuidores
+* [Gustavo](https://github.com/freazesss)
 
 ## Licensa
-
 Esse projeto esta licensiado abaixo da licensa da MIT - veja o [LICENSE.md](LICENSE.md) arquivo para mais detalhes.
-
-## Agradecimentos
-
-* Gorjeta de chapéu para qualquer pessoa cujo código foi usado
-* Inpiração
-* etc
