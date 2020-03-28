@@ -71,5 +71,5 @@ npm run build || yarn build
 ## Contribuidores
 * [Gustavo](https://github.com/freazesss) - /freazesss
 
-## Licensa
+## Licença
 Esse projeto esta licensiado abaixo da licensa da MIT - veja o [LICENSE.md](LICENSE.md) arquivo para mais detalhes.
