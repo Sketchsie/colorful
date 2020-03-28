@@ -7,7 +7,7 @@
 
 <p>
   <img src="./src/assets/pt-br.png" alt="Portuguese" height="16">
-  <a href="https://github.com/LaksCastro/colorful/edit/master/README.md">Leia essa page em ingles</a>
+  <a href="https://github.com/LaksCastro/colorful/blob/master/README.md">Leia essa page em ingles</a>
 </p>
 
 ## Como utilizar
