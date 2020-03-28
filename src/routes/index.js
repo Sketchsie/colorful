@@ -1,4 +1,5 @@
 const Router = function () {
+    console.log(process.env.PATH_BASE);
     const pathbase = process.env.PATH_BASE;
 
     const instance = {
