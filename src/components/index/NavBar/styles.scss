@@ -27,34 +27,3 @@
         font-weight: normal;
     }
 }
-#nav-icons-wrapper{
-    display: flex;
-    align-items: center;
-    font-size: 1.8em;
-    *{
-        color: var(--color-light);
-        transition: all .3s ease-in-out;
-        margin: 3px;
-        will-change: opacity, transform;
-        &:hover{
-            opacity: 0.8;
-        }
-    }
-    p{
-        font-size: 0.5em;
-        color: var(--color-light);
-        margin-right: 12px;
-    }
-}
-@media screen and (max-width: 492px){
-    #nav-icons-wrapper{
-        display: none;
-    }
-}
-@media screen and (max-width: 310px){
-    #nav-logo-wrapper{
-        h1{
-            display: none;
-        }
-    }
-}

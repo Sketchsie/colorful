@@ -42,7 +42,8 @@
     "dotenv-webpack": "^1.7.0",
     "embla-carousel": "^2.8.1",
     "gh-pages": "^2.2.0",
-    "hammerjs": "^2.0.8"
+    "hammerjs": "^2.0.8",
+    "menu-hamburger": "^2.0.9"
   },
   "browserslist": [
     "> 1%",

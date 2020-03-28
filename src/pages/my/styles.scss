@@ -17,3 +17,13 @@
         color: var(--color-light);
     }
 }
+
+@media screen and (max-width: 720px){
+    img{
+        max-width: 200px;
+        margin-bottom: 1rem;
+    }
+    h1{
+        font-size: 1.1em;
+    }
+}

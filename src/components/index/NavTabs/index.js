@@ -4,82 +4,138 @@ import Hammer from "hammerjs";
 
 import { redirect } from "../../../scripts/redirectTo";
 
-import { generateRandomNumber, getLiquidRoute } from "../../../scripts/utils";
+import { getLiquidRoute } from "../../../scripts/utils";
 
 import tabs from "./tabs";
 
-import EmblaCarousel from 'embla-carousel'
-
-function Icon(color) {
-    return `
-        <div style="background: ${color}" class="nav-tab-color-icon"></div>
-    `
+function styleIfActive(firstColor, secondColor) {
+    return `border-left: 2px solid transparent; 
+            border-image: linear-gradient(to bottom, ${firstColor}, ${secondColor});
+            border-image-slice: 1;
+            background-color: var(--content-hovered);
+        `
 }
 
-function useLinearGradient(useNow, firstColor, secondColor) {
-    if (!useNow) return `border: 2px solid transparent;"`
+function NavTabItem(name, firstColor, secondColor, path) {
+    let isActive = getLiquidRoute(window.location.pathname) === path;
 
-    return `border: 2px solid transparent; border-image: linear-gradient(to left, ${firstColor}, ${secondColor});border-image-slice: 1;"`
-}
+    const gradient = `background: linear-gradient(to bottom, ${firstColor} 50%, ${secondColor} 50%)`
 
-function NavItemTabContainer({ name, icons, path }) {
-    const dataAppear = generateRandomNumber(0, 1) === 1 ? "right" : "left";
-
-    const isSelected = getLiquidRoute(window.location.pathname) === path;
-
-    const navItemTabContainerString = `
-        <div style="background: ${isSelected ? "var(--content-lightness)" : "transparent"};${useLinearGradient(isSelected, icons[3], icons[0])}}" class="nav-tab-item-container" data-appear="${dataAppear}"></div>
+    const navTabString = `
+        <li style="
+            ${isActive ? styleIfActive(firstColor, secondColor) : ""}" 
+            class="nav-body-item"
+        >
+            <div style="${gradient}" class="nav-body-item-icon"></div>
+            <p class="nav-body-item-text">${name}</p>
+        </li>
     `
 
-    const navItemTabItemString = `
-        <div class="nav-tab-item" style="${useLinearGradient(true, icons[0], icons[3])}}}">
-            <div class="nav-tab-color-icon-wrapper">
-                ${icons.map(iconColor => Icon(iconColor)).join("")}
-            </div>
-            <p>${name}</p>
-        </div>
-    `
-    const navItemTabContainerNode = navItemTabContainerString.stringToHTML();
-    const navItemTabItemNode = navItemTabItemString.stringToHTML();
+    const navTabNode = navTabString.stringToHTML();
 
-    const NavItemTabNodeHammer = new Hammer(navItemTabItemNode);
-    NavItemTabNodeHammer.on("tap", () => redirect(path));
-
-    navItemTabContainerNode.appendChild(navItemTabItemNode);
-
-    return { navItemTabContainerNode, isSelected };
+    navTabNode.onclick = () => redirect(path);
+    return navTabNode;
 }
+
 function NavTabs() {
 
     const navWrapperString = `
-        <nav id="nav-tab-wrapper">
+        <nav id="nav-tab-wrapper" class="hide">
         </nav>
     `
     const navContainerString = `
         <div id="nav-tab-container"></div>
     `;
 
+    const navFooterString = `
+        <div id="nav-icons-wrapper">
+            <p>Created By</p>
+            <a id="nav-link-github" target="_blank" rel="noopener noreferrer external"
+                href="https://github.com/LaksCastro">
+                <i class="fab fa-github-square"></i>
+            </a>
+            <a id="nav-link-twitter" target="_blank" rel="noopener noreferrer external"
+                href="https://twitter.com/LaksCastro">
+                <i class="fab fa-twitter-square"></i>
+            </a>
+        </div>
+    `
+
+    const navHeaderString = `
+        <div id="nav-header-wrapper">
+            <img src="${process.env.PATH_BASE === "/" ? "/assets/logo.png" : `${process.env.PATH_BASE}/assets/logo.png`}">
+        </div>
+    `
+    const navBodyString = `
+        <ul id="nav-body-wrapper"></ul>
+    `
+
+    const navSpanCloseString = `
+        <nav id="nav-span-close"></nav>
+    `
+    const navSpanCloseNode = navSpanCloseString.stringToHTML();
+    const navSpanCloseHammer = new Hammer(navSpanCloseNode);
+    navSpanCloseHammer.on("tap", closeDrawer);
+
+    const navHeaderNode = navHeaderString.stringToHTML();
+    const navBodyNode = navBodyString.stringToHTML();
+
+    tabs.forEach(tab => {
+        const item = NavTabItem(tab.name, tab.colors[0], tab.colors[1], tab.path);
+        navBodyNode.appendChild(item);
+    });
+
     const navWrapperNode = navWrapperString.stringToHTML();
+
     const navContainerNode = navContainerString.stringToHTML();
 
-    let selectedIndex = null;
+    const navContainerHammer = new Hammer(navContainerNode);
+    navContainerHammer.on("swiperight", closeDrawer);
 
-    tabs.forEach((tab, i) => {
-        const { navItemTabContainerNode, isSelected } = NavItemTabContainer(tab);
-        if (isSelected)
-            selectedIndex = i;
-        navContainerNode.appendChild(navItemTabContainerNode)
-    })
+    const navFooterNode = navFooterString.stringToHTML();
 
+    navWrapperNode.appendChild(navSpanCloseNode);
+    navContainerNode.appendChild(navHeaderNode);
+    navContainerNode.appendChild(navBodyNode);
+    navContainerNode.appendChild(navFooterNode);
     navWrapperNode.appendChild(navContainerNode);
 
-    const options = {
-        containScroll: true,
-        dragFree: true,
-        startIndex: selectedIndex || 0
-    }
+    return navWrapperNode;
+}
 
-    return { navNode: navWrapperNode, EmblaCarousel, customTratative: true, options };
+let onToggleState = null;
+
+function onToggle(callback) {
+    onToggleState = callback;
+}
+function drawerIsOpened() {
+    return document.getElementById("nav-tab-wrapper").classList.contains("visible");
+}
+function closeDrawer() {
+    if (!drawerIsOpened()) return;
+    toggleDrawer();
+}
+function openDrawer() {
+    if (drawerIsOpened()) return;
+    toggleDrawer();
+}
+function toggleDrawer() {
+    const drawer = document.getElementById("nav-tab-wrapper");
+    if (drawerIsOpened()) {
+        drawer.classList.remove("visible");
+        drawer.classList.add("hide");
+    } else {
+        drawer.classList.remove("hide");
+        drawer.classList.add("visible");
+    }
+    onToggleState && onToggleState();
+}
+
+export {
+    onToggle,
+    closeDrawer,
+    openDrawer,
+    toggleDrawer
 }
 
 export default NavTabs;
