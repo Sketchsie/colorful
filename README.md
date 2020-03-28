@@ -1,8 +1,8 @@
-<h1>
+<h3>
   <blockquote>
-    <em>IN DEVELOPMENT</em>
+    IN DEVELOPMENT
   </blockquote>
-</h1>
+</h3>
 
 <p align="center">
   <img src="./src/assets/images/logo.png" width="150">
