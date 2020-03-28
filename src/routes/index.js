@@ -83,7 +83,7 @@ const Router = function () {
             this.pathname = validPathname;
         },
         redirectTo: function (pathname) {
-            this.pathname = pathname;
+            this.setPathname(pathname);
             history.pushState({}, pathname, pathname);
             this.match();
         },
