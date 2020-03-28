@@ -55,14 +55,6 @@ npm run build || yarn build
 * [Babel](https://babeljs.io/) - Transpilador JavaScript.
 * [JavaScript](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript) - A linguagem utilizada
 
-## Contribuição
-
-Por favor leia [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) para detalhes no seu codigo de  conduta, e o processo para mandar pull requests para nos.
-
-## Versionamento
-
-Nos utilizamos [SemVer](http://semver.org/) para versionamento. Para as versões disponiveis, veja as [tags nesse repositorio](https://github.com/your/project/tags). 
-
 ## Autores
 * [Laks Castro](https://github.com/LaksCastro)
 
