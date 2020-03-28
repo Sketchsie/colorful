@@ -22,40 +22,40 @@ Aprender a criar rotas e manipular o DOM via JavaScript e a configurar utilizar 
 </p>
 
 
-## Quer ler um pouco de código?
+## Clone the repository for your machine
 Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste. Consulte implantação para obter notas sobre como implantar o projeto em um sistema ativo.
 
-### Requisitos
-- Node instalado
-- Npm ou Yarn instalado
+### Requirements
+- Node installed
+- Npm or Yarn installed
 
-### Instalando
-1. Clone o repositório usando o cliente do Github de sua preferência, ou faça o download do repositório  
-Usando o cliente do Github via linha de comando:  
+### Installing
+1. Clone the repository using the Github client of your choice, or download the repository
+Using the Github client via the command line:
 ```
 git clone https://github.com/LaksCastro/colorful.git
 ```
 
-2. Instale as dependências:  
+2. Install the dependencies:
 ```
 npm install || yarn install
 ```
 
-3. Crie seu seu arquivo .env.dev e coloque a rota que estamos trabalhando como `PATH_BASE=/`, pois o Webpack Dev Server utiliza o servidor local com este endereço http://localhost:3000/
+3. Create your .env.dev file and put the route we are working on as `PATH_BASE = /`, because the Webpack Dev Server uses the local server with this address http://localhost:3000/
 ```
 # .env.dev
 
 BASE_PATH=/
 ```
 
-Faça o mesmo para o .env.prod se for usar este projeto em produção, porém agora coloque o nome da rota relativa ao seu servidor, no caso deste repositório, `BASE_PATH=/colorful`
+Do the same for .env.prod if you are going to use this project in production, but now put the name of the route relative to your server, in the case of this repository: `BASE_PATH=/colorful`
 
-4. Inicie o Webpack Dev Server:
+4. Start Webpack Dev Server:
 ```
 npm run start || yarn start
 ```
 
-5. Para fazer a Build: 
+5. Generate Build
 ```
 npm run build || yarn build
 ```
