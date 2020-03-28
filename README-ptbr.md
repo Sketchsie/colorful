@@ -4,8 +4,6 @@
   <p align="center">Infinitas paletas geradas por Scripts, salve elas ou copie uma de suas cores</p>
 </p>
 
-<iframe src="https://google.com.br/"></iframe>
-
 <p>
   <img src="./src/assets/en.png" alt="Portuguese" height="16">
   <a href="https://github.com/LaksCastro/colorful/blob/master/README.md">Read in English</a>
