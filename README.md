@@ -1,98 +1,75 @@
 <p align="center">
   <img src="./src/assets/images/logo.png" width="150">
   <h1 align="center">Colorful</h1>
-  <p align="center">Infinite color palettes, save it or copy any of its colors, enjoy</p>
+  <p align="center">Infinitas paletas geradas por Scripts, salve elas ou copie uma de suas cores</p>
 </p>
 
 <p>
-  <img src="./src/assets/pt-br.png" alt="Portuguese" height="16">
-  <a href="https://github.com/LaksCastro/colorful/blob/master/README-ptbr.md">Leia em Português</a>
+  <img src="./src/assets/en.png" alt="Portuguese" height="16">
+  <a href="https://github.com/LaksCastro/colorful/blob/master/README.md">Read in English</a>
 </p>
 
-## How To Use
-Its very simples, open [Colorful Website](https://lakscastro.github.io/colorful/) and Browser :)
+## Como utilizar
+É simples, abra [Site da Colorful](https://lakscastro.github.io/colorful/) e navegue entre as infinitas paletas, gostou de alguma? Basta clicar no coração, que ela estará salva na sua sessão do navegador, e para acessa-la basta ir até a guia "My Palette's', todas elas estarão lá :) Há tema Dark e Light, use o que te preferir, para alternar entre eles, basta clicar no pequeno botão no canto inferior esquerdo com ícone de pincel.
+
+## Objetivo do projeto
+Aprender a criar rotas e manipular o DOM via JavaScript e a configurar utilizar o Webpack e Babel para que a aplicação seja divida em módulos e compatível com a maioria dos navegadores, tudo sem utilizar nenhuma biblioteca ou framework JavaScript como React ou Vue
+
+<p align="center">
+  <img width="450" src="./src/assets/print/print-1.png">
+  <img width="450" src="./src/assets/print/print-2.png">
+  <img width="450" src="./src/assets/print/print-3.png">
+</p>
 
 
-## Getting Started
+## Quer ler um pouco de código?
+Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste. Consulte implantação para obter notas sobre como implantar o projeto em um sistema ativo.
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+### Requisitos
+- Node instalado
+- Npm ou Yarn instalado
 
-### Prerequisites
-
-What things you need to install the software and how to install them
-
+### Instalando
+1. Clone o repositório usando o cliente do Github de sua preferência, ou faça o download do repositório  
+Usando o cliente do Github via linha de comando:  
 ```
-Give examples
-```
-
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+git clone https://github.com/LaksCastro/colorful.git
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
+2. Instale as dependências:  
 ```
-Give an example
+npm install || yarn install
 ```
 
-### And coding style tests
-
-Explain what these tests test and why
-
+3. Crie seu seu arquivo .env.dev e coloque a rota que estamos trabalhando como `PATH_BASE=/`, pois o Webpack Dev Server utiliza o servidor local com este endereço http://localhost:3000/
 ```
-Give an example
+# .env.dev
+
+BASE_PATH=/
 ```
 
-## Deployment
+Faça o mesmo para o .env.prod se for usar este projeto em produção, porém agora coloque o nome da rota relativa ao seu servidor, no caso deste repositório, `BASE_PATH=/colorful`
 
-Add additional notes about how to deploy this on a live system
+4. Inicie o Webpack Dev Server:
+```
+npm run start || yarn start
+```
 
-## Built With
+5. Para fazer a Build: 
+```
+npm run build || yarn build
+```
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+## Built with
+* [Webpack 4](https://webpack.js.org/) - Module Bundler.
+* [Babel](https://babeljs.io/) - Transpilador JavaScript.
+* [JavaScript](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript) - A linguagem utilizada
 
 ## Authors
+* [Laks Castro](https://github.com/LaksCastro) - /lakscastro
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+## Contributors
+* [Gustavo](https://github.com/freazesss) - /freazesss
 
 ## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) archive for more details.
