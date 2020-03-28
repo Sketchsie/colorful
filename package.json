@@ -34,7 +34,7 @@
   "scripts": {
     "start": "webpack-dev-server --open --config=config/webpack.dev.js",
     "build": "webpack --config=config/webpack.prod.js",
-    "publish": "node publish.js"
+    "publish-gh-pages": "node publish.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.7.0",
