@@ -56,10 +56,10 @@ npm run build || yarn build
 * [JavaScript](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript) - A linguagem utilizada
 
 ## Autores
-* [Laks Castro](https://github.com/LaksCastro)
+* [Laks Castro](https://github.com/LaksCastro) - /lakscastro
 
 ## Contribuidores
-* [Gustavo](https://github.com/freazesss)
+* [Gustavo](https://github.com/freazesss) - /freazesss
 
 ## Licensa
 Esse projeto esta licensiado abaixo da licensa da MIT - veja o [LICENSE.md](LICENSE.md) arquivo para mais detalhes.
