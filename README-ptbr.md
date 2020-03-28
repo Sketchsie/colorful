@@ -39,7 +39,7 @@ npm install || yarn install
 BASE_PATH=/
 ```
 
-Termine com um exemplo de como retirar alguns dados do sistema ou usá-los para uma pequena demonstração
+Faça o mesmo para o .env.prod se for usar este projeto em produção, porém agora coloque o nome da rota relativa ao seu servidor, no caso deste repositório, `BASE_PATH=/colorful`
 
 ## Rode o teste
 
