@@ -72,6 +72,7 @@ img{
 
 *[data-appear]{
   transition: all .3s ease-in;
+  will-change: opacity, transform;
 }
 *[data-appear=right]{
   opacity: 0;

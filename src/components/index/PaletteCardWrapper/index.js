@@ -4,22 +4,13 @@ import Hammer from "hammerjs";
 
 import { useLocalStorage } from "../../../scripts/useLocalStorage";
 
+import PaletteCard from "../PaletteCard";
+
 import { generateRandomNumber, createUniqueId } from "../../../scripts/utils";
 
-function getLinearGradient(colors) {
-    return `
-        background: linear-gradient(to bottom, 
-            ${colors[0]} 30%, 
-            ${colors[1]} 30%, 
-            ${colors[1]} 55%, 
-            ${colors[2]} 55%, 
-            ${colors[2]} 75%,
-            ${colors[3]} 75%, 
-            ${colors[3]} 90%,
-            ${colors[4]} 90%, 
-            ${colors[4]} 100%
-        );
-    `
+
+function getCardsColors(colors) {
+    return colors.map(color => `<div data-height="crescent" style="background-color: ${color};"></div>`).join("");
 }
 
 function PaletteCardWrapper(colorsArray, id) {
@@ -79,7 +70,7 @@ function PaletteCardWrapper(colorsArray, id) {
         <div class="p-item-buttons-wrappers"></div>
     `
     const paletteContainerColorsString = `
-        <div style="${getLinearGradient(colorsArray)}" class="p-item-colors-wrapper" data-appear="${dataAppear}"></div>
+        <div class="p-item-colors-wrapper" data-appear="${dataAppear}"></div>
     `
 
     const paletteButtonFavoriteNode = paletteButtonFavoriteString.stringToHTML();
@@ -96,6 +87,7 @@ function PaletteCardWrapper(colorsArray, id) {
 
     const paletteContainerColorsNode = paletteContainerColorsString.stringToHTML();
 
+    colorsArray.forEach(color => paletteContainerColorsNode.appendChild(PaletteCard(color)));
 
     paletteButtonPreviewNode.onclick = () => window.__openInterfacePreview(colorsArray);
 

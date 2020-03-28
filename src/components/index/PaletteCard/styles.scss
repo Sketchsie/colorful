@@ -1,0 +1,34 @@
+.p-item{
+    display: flex;
+    align-items: flex-end;
+
+    p{
+        cursor: pointer;
+
+        will-change: opacity, visibility;
+        opacity: 0;
+        visibility: hidden;
+
+        transition: all .2s ease-in-out;
+
+        padding: 2px 3px;
+        background: rgba(0,0,0,.35);
+        color: #f1f1f1;
+        border-radius: 3px;
+
+        text-align: center;
+
+        font-size: 13px;
+
+        text-transform: uppercase;
+    }
+    &:hover{
+        p{
+            opacity: 0.5;
+            visibility: visible;
+            &:hover{
+                opacity: 1;
+            }
+        }
+    }
+}
