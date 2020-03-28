@@ -1,3 +1,4 @@
+const Dotenv = require('dotenv-webpack');
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
@@ -76,5 +77,8 @@ module.exports = {
       filename: "index.html",
       favicon: "./src/assets/images/logo.png"
     }),
+    new Dotenv({
+      path: './.env', // Path to .env file (this is the default)
+    })
   ]
 };

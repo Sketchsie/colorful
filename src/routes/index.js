@@ -1,6 +1,6 @@
-const pathbase = process.env.PATH_BASE;
-
 const Router = function () {
+    const pathbase = process.env.PATH_BASE;
+    console.log(pathbase);
 
     const instance = {
         routes: [],
