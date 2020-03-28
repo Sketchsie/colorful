@@ -141,6 +141,19 @@ function removeAllChildsOf(nodeElement) {
         nodeElement.removeChild(childsToRemove[i]));
 }
 
+function getLiquidRoute(newPathname) {
+    let pathbase = process.env.PATH_BASE;
+
+    let liquidPathname = null;
+
+    if (pathbase === "/") {
+        liquidPathname = newPathname;
+    } else {
+        liquidPathname = newPathname.substring(pathbase.length);
+    }
+    return liquidPathname;
+}
+
 export {
     generateRandomNumber,
     generateRandomColor,
@@ -151,5 +164,6 @@ export {
     fullColorHex,
     debounce,
     createUniqueId,
-    removeAllChildsOf
+    removeAllChildsOf,
+    getLiquidRoute
 }

@@ -4,7 +4,7 @@ import Hammer from "hammerjs";
 
 import { redirect } from "../../../scripts/redirectTo";
 
-import { generateRandomNumber } from "../../../scripts/utils";
+import { generateRandomNumber, getLiquidRoute } from "../../../scripts/utils";
 
 import tabs from "./tabs";
 
@@ -25,7 +25,7 @@ function useLinearGradient(useNow, firstColor, secondColor) {
 function NavItemTabContainer({ name, icons, path }) {
     const dataAppear = generateRandomNumber(0, 1) === 1 ? "right" : "left";
 
-    const isSelected = window.location.pathname === path;
+    const isSelected = getLiquidRoute(window.location.pathname) === path;
 
     const navItemTabContainerString = `
         <div style="background: ${isSelected ? "var(--content-lightness)" : "transparent"};${useLinearGradient(isSelected, icons[3], icons[0])}}" class="nav-tab-item-container" data-appear="${dataAppear}"></div>

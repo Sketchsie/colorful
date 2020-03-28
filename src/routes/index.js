@@ -1,6 +1,6 @@
-const Router = function () {
-    const pathbase = process.env.PATH_BASE;
+import { getLiquidRoute } from "../scripts/utils";
 
+const Router = function () {
     const instance = {
         routes: [],
 
@@ -74,13 +74,7 @@ const Router = function () {
             });
         },
         setPathname: function (newPathname) {
-            let validPathname = null;
-            if (pathbase === "/") {
-                validPathname = newPathname;
-            } else {
-                validPathname = newPathname.substring(pathbase.length);
-            }
-            this.pathname = validPathname;
+            this.pathname = getLiquidRoute(newPathname);
         },
         redirectTo: function (pathname) {
             this.setPathname(pathname);
