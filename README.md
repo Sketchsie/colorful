@@ -5,8 +5,8 @@
 </p>
 
 <p>
-  <img src="./src/assets/en.png" alt="Portuguese" height="16">
-  <a href="https://github.com/LaksCastro/colorful/blob/master/README.md">Read in English</a>
+  <img src="./src/assets/pt-br.png" alt="Portuguese" height="16">
+  <a href="https://github.com/LaksCastro/colorful/blob/master/README.md">Ler em português</a>
 </p>
 
 ## How to use
