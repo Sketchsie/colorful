@@ -21,8 +21,8 @@ Essas instruções fornecerão uma cópia do projeto em execução na sua máqui
 - Npm ou Yarn instalado
 
 ### Instalando
-1. Clone o repositório usando o cliente do Github de sua preferência, ou faça o download do repositório
-Via linha de comando:  
+1. Clone o repositório usando o cliente do Github de sua preferência, ou faça o download do repositório  
+Usando o cliente do Github via linha de comando:  
 ```
 git clone https://github.com/LaksCastro/colorful.git
 ```
