@@ -12,7 +12,7 @@
 
 <p>
   <img src="./src/assets/pt-br.png" alt="Portuguese" height="16">
-  <a href="https://github.com/LaksCastro/colorful/edit/master/README-ptbr.md">Leia esta página em português</a>
+  <a href="https://github.com/LaksCastro/colorful/master/README-ptbr.md">Leia esta página em português</a>
 </p>
 
 ## How To Use
