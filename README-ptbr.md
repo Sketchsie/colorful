@@ -22,7 +22,7 @@ Aprender a criar rotas e manipular o DOM via JavaScript e a configurar utilizar 
 </p>
 
 
-## Quer ler um pouco de código?
+## Clonar o repositório para sua máquina
 Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste. Consulte implantação para obter notas sobre como implantar o projeto em um sistema ativo.
 
 ### Requisitos
