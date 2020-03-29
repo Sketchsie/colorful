@@ -6,7 +6,7 @@
 
 <p>
   <img src="./src/assets/pt-br.png" alt="Portuguese" height="16">
-  <a href="https://github.com/LaksCastro/colorful/blob/master/README.md">Ler em português</a>
+  <a href="https://github.com/LaksCastro/colorful/blob/master/README-ptbr.md">Ler em português</a>
 </p>
 
 ## How to use
