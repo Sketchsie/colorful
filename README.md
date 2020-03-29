@@ -1,7 +1,7 @@
 <p align="center">
   <img src="./src/assets/images/logo.png" width="150">
   <h1 align="center">Colorful</h1>
-  <p align="center">Infinitas paletas geradas por Scripts, salve elas ou copie uma de suas cores</p>
+  <p align="center">Infinity color palette's, save it or use one of your colors</p>
 </p>
 
 <p>
