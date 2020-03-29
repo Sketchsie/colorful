@@ -62,8 +62,8 @@ npm run build || yarn build
 
 ## Built with
 * [Webpack 4](https://webpack.js.org/) - Module Bundler.
-* [Babel](https://babeljs.io/) - Transpilador JavaScript.
-* [JavaScript](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript) - A linguagem utilizada
+* [Babel](https://babeljs.io/) - JavaScript transpiler.
+* [JavaScript](https://developer.mozilla.org/pt-BR/docs/Aprender/JavaScript) - Language
 
 ## Authors
 * [Laks Castro](https://github.com/LaksCastro) - /lakscastro
