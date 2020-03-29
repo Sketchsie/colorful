@@ -23,8 +23,6 @@ Learn to work with Vanilla Js: Routes, DOM manipulation, all together with Webpa
 
 
 ## Clone the repository for your machine
-Essas instruções fornecerão uma cópia do projeto em execução na sua máquina local para fins de desenvolvimento e teste. Consulte implantação para obter notas sobre como implantar o projeto em um sistema ativo.
-
 ### Requirements
 - Node installed
 - Npm or Yarn installed
