@@ -2,6 +2,12 @@
   <img src="./src/assets/images/logo.png" width="150">
   <h1 align="center">Colorful</h1>
   <p align="center">Infinity color palette's, save it or use one of your colors</p>
+  <p align="center">
+    <img src="https://img.shields.io/badge/bot-colors-success" alt="PWA installable" />
+    <img src="https://img.shields.io/badge/type-project-orange" alt="Repo Type" />
+    <img src="https://img.shields.io/badge/language-javascript-yellow" alt="Repo Main Language" />
+    <img src="https://img.shields.io/badge/platform-web-orange" alt="Project Platform" />
+  </p>
 </p>
 
 <p>
