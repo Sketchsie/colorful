@@ -18,6 +18,12 @@
   </p>
 </p>
 
+<p align="center">
+  <img width="450" src="./src/assets/print/print-1.png">
+  <img width="450" src="./src/assets/print/print-2.png">
+  <img width="450" src="./src/assets/print/print-3.png">
+</p>
+
 <p>
   <img src="./src/assets/pt-br.png" alt="Portuguese" height="16">
   <a href="https://github.com/LaksCastro/colorful/blob/master/README-ptbr.md">Ler em português</a>
@@ -28,13 +34,6 @@ Is very simple, open [Colorful Website](https://lakscastro.github.io/colorful/) 
 
 ## Project's Goal
 Learn to work with Vanilla Js: Routes, DOM manipulation, all together with Webpack 4 and Babel for the app divided into modules and compatible with most browsers
-
-<p align="center">
-  <img width="450" src="./src/assets/print/print-1.png">
-  <img width="450" src="./src/assets/print/print-2.png">
-  <img width="450" src="./src/assets/print/print-3.png">
-</p>
-
 
 ## Clone the repository for your machine
 ### Requirements
