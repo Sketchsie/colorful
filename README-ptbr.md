@@ -18,6 +18,12 @@
   </p>
 </p>
 
+<p align="center">
+  <img width="450" src="./src/assets/print/print-1.png">
+  <img width="450" src="./src/assets/print/print-2.png">
+  <img width="450" src="./src/assets/print/print-3.png">
+</p>
+
 <p>
   <img src="./src/assets/en.png" alt="Portuguese" height="16">
   <a href="https://github.com/LaksCastro/colorful/blob/master/README.md">Read in English</a>
@@ -28,13 +34,6 @@
 
 ## Objetivo do projeto
 Aprender a criar rotas e manipular o DOM via JavaScript e a configurar utilizar o Webpack e Babel para que a aplicação seja divida em módulos e compatível com a maioria dos navegadores, tudo sem utilizar nenhuma biblioteca ou framework JavaScript como React ou Vue
-
-<p align="center">
-  <img width="450" src="./src/assets/print/print-1.png">
-  <img width="450" src="./src/assets/print/print-2.png">
-  <img width="450" src="./src/assets/print/print-3.png">
-</p>
-
 
 ## Clonar o repositório para sua máquina
 ### Requisitos
