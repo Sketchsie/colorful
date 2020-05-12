@@ -2,6 +2,20 @@
   <img src="./src/assets/images/logo.png" width="150">
   <h1 align="center">Colorful</h1>
   <p align="center">Infinitas paletas geradas por Scripts, salve elas ou copie uma de suas cores</p>
+  <p align="center">
+    <img src="https://img.shields.io/badge/bot-colors-success" alt="PWA installable" />
+    <img src="https://img.shields.io/badge/type-project-orange" alt="Repo Type" />
+    <img src="https://img.shields.io/badge/language-javascript-yellow" alt="Repo Main Language" />
+    <img src="https://img.shields.io/badge/platform-web-orange" alt="Project Platform" />
+  </p>
+  <p align="center">
+    <a href="https://twitter.com/lakscastro" target="_blank">
+      <img src="https://img.shields.io/twitter/url?label=Follow%20%40LaksCastro&logo=twitter&url=https%3A%2F%2Fwww.twitter.com%2Flakscastro%2F" alt="Follow" />
+    </a>
+    <a href="https://www.linkedin.com/in/laks-castro-9ab09a18b/" target="_blank">
+      <img src="https://img.shields.io/twitter/url?label=Connect%20%40LaksCastro&logo=linkedin&url=https%3A%2F%2Fwww.twitter.com%2Flakscastro%2F" alt="Follow" />
+    </a>
+  </p>
 </p>
 
 <p>
