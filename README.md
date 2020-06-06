@@ -79,5 +79,18 @@ npm run build || yarn build
 ## Contributors
 * [Gustavo](https://github.com/freazesss) - /freazesss
 
-## License
-This project is licensed under the MIT license - see the [LICENSE.md](LICENSE.md) archive for more details.
+<br>
+<br>
+<br>
+<br>
+
+<h2 align="center">
+  Open Source
+</h2>
+<p align="center">
+  <sub>Copyright © 2020-present, Laks Castro.</sub>
+</p>
+<p align="center">Colorful <a href="https://github.com/LaksCastro/ethereal-color/LICENSE.md">is MIT licensed 💖</a></p>
+<p align="center">
+  <img src="./src/assets/images/logo.png" width="35" />
+</p>
