@@ -90,7 +90,7 @@ npm run build || yarn build
 <p align="center">
   <sub>Copyright © 2020-present, Laks Castro.</sub>
 </p>
-<p align="center">Colorful <a href="https://github.com/LaksCastro/colorful/LICENSE.md">is MIT licensed 💖</a></p>
+<p align="center">Colorful <a href="https://github.com/LaksCastro/colorful/blob/master/LICENSE.md">is MIT licensed 💖</a></p>
 <p align="center">
   <img src="./src/assets/images/logo.png" width="35" />
 </p>
