@@ -79,5 +79,18 @@ npm run build || yarn build
 ## Contribuidores
 * [Gustavo](https://github.com/freazesss) - /freazesss
 
-## Licença
-Esse projeto esta licensiado abaixo da licensa da MIT - veja o [LICENSE.md](LICENSE.md) arquivo para mais detalhes.
+<br>
+<br>
+<br>
+<br>
+
+<h2 align="center">
+  Open Source
+</h2>
+<p align="center">
+  <sub>Copyright © 2020-present, Laks Castro.</sub>
+</p>
+<p align="center">Colorful <a href="https://github.com/LaksCastro/colorful/blob/master/LICENSE.md">is MIT licensed 💖</a></p>
+<p align="center">
+  <img src="./src/assets/images/logo.png" width="35" />
+</p>
