@@ -3,7 +3,6 @@ import "./styles.scss";
 import Hammer from "hammerjs";
 
 const interfacePreview = function () {
-
     const interfaceString = `
         <div id="interface-preview-wrapper" class="hide">
             <div class="interface-preview-item"></div>
