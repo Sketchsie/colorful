@@ -9,10 +9,12 @@
   list-style: none;
   -webkit-tap-highlight-color: transparent;
 }
+
 *::before,
 *::after {
   box-sizing: border-box;
 }
+
 ::-webkit-scrollbar { 
   display: none; 
 }
