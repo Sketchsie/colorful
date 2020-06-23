@@ -4,7 +4,6 @@ import SimpleToast from "../SimpleToast"
 import { copyToClipboard } from "../../../scripts/utils"
 
 function PaletteCard(color) {
-
     const colorString = `<p>${color}</p>`
     const colorNode = colorString.stringToHTML();
 
