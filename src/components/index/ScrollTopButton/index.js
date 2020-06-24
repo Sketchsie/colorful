@@ -8,6 +8,7 @@ function ScrollTopButton() {
     `
     const buttonNode = buttonString.stringToHTML();
     buttonNode.onclick = () => window.scroll({ top: 0, left: 0, behavior: "smooth" });
+  
     return buttonNode;
 }
 
