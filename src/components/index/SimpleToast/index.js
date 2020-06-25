@@ -1,5 +1,4 @@
 function SimpleToast(message) {
-
     const toastString = `
         <div id="toast-wrapper">${message}</div>
     `
