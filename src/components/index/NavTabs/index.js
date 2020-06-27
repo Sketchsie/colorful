@@ -40,7 +40,6 @@ function NavTabItem(name, firstColor, secondColor, path) {
 }
 
 function NavTabs() {
-
     const navWrapperString = `
         <nav id="nav-tab-wrapper" class="hide">
         </nav>
