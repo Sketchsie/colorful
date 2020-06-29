@@ -13,6 +13,7 @@ function PaletteCard(color) {
     const paletteNode = paletteString.stringToHTML();
 
     const colorHammer = new Hammer(colorNode);
+  
     colorHammer.on("tap", () => {
         copyToClipboard(color);
         SimpleToast("Copied to clipboard!");
