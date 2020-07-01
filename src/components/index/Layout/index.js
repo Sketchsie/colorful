@@ -8,4 +8,5 @@ import NavTabs from "../NavTabs";
 const Layout = function (children) {
     return [NavBar, NavTabs, children, InterfacePreview, ThemeButton, ScrollTopButton, TransitionSpan];
 }
+
 export default Layout;
