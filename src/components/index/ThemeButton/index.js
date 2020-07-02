@@ -6,6 +6,7 @@ function ThemeButton() {
             <i class="fas fa-paint-roller"></i>
         </button>
     `
+    
     const buttonNode = buttonString.stringToHTML();
     buttonNode.onclick = () => {
         window.__toggleTransitionSpan();
@@ -15,8 +16,8 @@ function ThemeButton() {
                 window.__toggleTransitionSpan();
             }, 300);
         }, 300);
-
     };
+  
     return buttonNode;
 }
 
